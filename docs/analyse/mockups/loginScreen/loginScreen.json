@@ -1,0 +1,85 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "AndroidPhone",
+                    "zOrder": "0",
+                    "measuredW": "356",
+                    "measuredH": "725",
+                    "x": "595",
+                    "y": "38",
+                    "properties": {
+                        "resizing": "stretch"
+                    }
+                },
+                {
+                    "ID": "1",
+                    "typeID": "TextInput",
+                    "zOrder": "1",
+                    "w": "128",
+                    "measuredW": "73",
+                    "measuredH": "27",
+                    "x": "709",
+                    "y": "344",
+                    "properties": {
+                        "text": "username",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "2",
+                    "typeID": "TextInput",
+                    "zOrder": "2",
+                    "w": "128",
+                    "measuredW": "70",
+                    "measuredH": "27",
+                    "x": "709",
+                    "y": "379",
+                    "properties": {
+                        "text": "password",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "3",
+                    "typeID": "Button",
+                    "zOrder": "3",
+                    "w": "79",
+                    "h": "27",
+                    "measuredW": "51",
+                    "measuredH": "27",
+                    "x": "758",
+                    "y": "412",
+                    "properties": {
+                        "text": "login"
+                    }
+                },
+                {
+                    "ID": "4",
+                    "typeID": "Link",
+                    "zOrder": "4",
+                    "measuredW": "40",
+                    "measuredH": "21",
+                    "x": "714",
+                    "y": "415",
+                    "properties": {
+                        "text": "signup"
+                    }
+                }
+            ]
+        },
+        "attributes": {
+            "name": "New Wireframe 1",
+            "order": 1000000,
+            "parentID": null
+        },
+        "resourceID": "BFFD7562-3257-4881-8A5B-44A6D6751414",
+        "mockupH": "725",
+        "mockupW": "356",
+        "measuredW": "951",
+        "measuredH": "763",
+        "version": "1.0"
+    }
+}
