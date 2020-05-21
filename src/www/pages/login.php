@@ -1,3 +1,26 @@
+<?php
+require("../includes/sessionCheck.php");
+require("../managers/SessionManager.php");
+require("../managers/UserManager.php");
+
+$form_off = filter_input(INPUT_POST,'btnSubmit');
+if($form_off == "login")
+{
+    $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+    $email = ($email == null) ? "" : $email;
+    $passwd = filter_input(INPUT_POST,'passwd',FILTER_SANITIZE_STRING);
+    $passwd = ($passwd == null) ? "" : $passwd;
+    if($email != null && $passwd != null)
+    {
+        if(UserManager::Connect($email,$passwd) == true)
+        {
+            SessionManager::addSession("email",$email);
+            echo "succes ".$email;
+            header('Location: index.php');
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,24 +59,13 @@
 			        <div class="box">
 			            <div class="content-wrap">
 			                <h6>Sign In</h6>
-			                <div class="social">
-	                            <a class="face_login" href="#">
-	                                <span class="face_icon">
-	                                    <img src="images/facebook.png" alt="fb">
-	                                </span>
-	                                <span class="text">Sign in with Facebook</span>
-	                            </a>
-	                            <div class="division">
-	                                <hr class="left">
-	                                <span>or</span>
-	                                <hr class="right">
-	                            </div>
-	                        </div>
-			                <input class="form-control" type="text" placeholder="E-mail address">
-			                <input class="form-control" type="password" placeholder="Password">
+			            <form action='login.php' method='post'>
+			                <input class="form-control" name="email" type="text" placeholder="E-mail address">
+			                <input class="form-control" name="passwd" type="password" placeholder="Password">
 			                <div class="action">
-			                    <a class="btn btn-primary signup" href="index.php">Login</a>
-			                </div>                
+			                    <input type="submit" name ="btnSubmit" class="btn btn-primary signup" value="login">
+							</div>
+			            </form>                
 			            </div>
 			        </div>
 

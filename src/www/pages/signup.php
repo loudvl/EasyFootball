@@ -1,3 +1,48 @@
+<?php
+require("../managers/SessionManager.php");
+require("../managers/UserManager.php");
+require("../includes/User.php");
+require("../managers/EmailManager.php");
+
+$form_off = filter_input(INPUT_POST,'confirmBtn');
+if($form_off == "Confirm")
+{
+    $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+    $email = ($email == null) ? "" : $email;
+    $passwd = filter_input(INPUT_POST,'passwd',FILTER_SANITIZE_STRING);
+	$passwd = ($passwd == null) ? "" : $passwd;
+	$confirmPasswd = filter_input(INPUT_POST,'confirmPasswd',FILTER_SANITIZE_STRING);
+    $confirmPasswd = ($confirmPasswd == null) ? "" : $confirmPasswd;
+    if($email != null && $passwd != null && $confirmPasswd != null)
+    {
+		if($passwd == $confirmPasswd)
+		{
+			if(!UserManager::UserExist($email))
+			{
+				$user = new User($email,$passwd);
+				$token = UserManager::createUser($user);
+				if($token != "")
+				{
+					EmailManager::initMailer();
+					if(EmailManager::sendEmail($email,"Register validation","<html><head></head><body><a href='localhost/pages/validate.php?token=".$token."'>Validate</a></body></html>"))
+					{
+						echo "Confirm email sent";
+					}
+				}
+			}
+			else {
+				echo "User already exist";
+			}
+		}
+		else {
+			echo "Passwords don't match";
+		}
+	}
+	else{
+		echo "Some fields are empty";
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,13 +80,15 @@
 				<div class="login-wrapper">
 			        <div class="box">
 			            <div class="content-wrap">
-			                <h6>Sign Up</h6>
-			                <input class="form-control" type="text" placeholder="E-mail address">
-			                <input class="form-control" type="password" placeholder="Password">
-			                <input class="form-control" type="password" placeholder="Confirm Password">
+							<h6>Sign Up</h6>
+							<form action='signup.php' method='post'>
+			                <input class="form-control" name="email" type="text" placeholder="E-mail address">
+			                <input class="form-control" name="passwd" type="password" placeholder="Password">
+			                <input class="form-control" name="confirmPasswd" type="password" placeholder="Confirm Password">
 			                <div class="action">
-			                    <a class="btn btn-primary signup" href="index.php">Sign Up</a>
-			                </div>                
+			                    <input type='submit' class="btn btn-primary signup" value='Confirm' name=confirmBtn>
+							</div>
+							</form>                
 			            </div>
 			        </div>
 

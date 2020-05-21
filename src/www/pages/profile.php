@@ -1,5 +1,6 @@
 <?php
 require("../includes/sessionCheck.php");
+require("../managers/UserManager.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,7 +66,7 @@ require("../includes/sessionCheck.php");
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="current"><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
                     <li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
                     <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i> Statistics (Charts)</a></li>
                     <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
@@ -99,10 +100,15 @@ require("../includes/sessionCheck.php");
 							</div>
 						</div>
 		  				<div class="panel-body">
-		  					Ut tristique adipiscing mauris, sit amet suscipit metus porta quis. Donec dictum tincidunt erat, eu blandit ligula. Nam sit amet dolor sapien. Quisque velit erat, congue sed suscipit vel, feugiat sit amet enim. Suspendisse interdum enim at mi tempor commodo. Sed tincidunt sed tortor eu scelerisque. Donec luctus malesuada vulputate. Nunc vel auctor metus, vel adipiscing odio. Aliquam aliquet rhoncus libero, at varius nisi pulvinar nec. Aliquam erat volutpat. Donec ut neque mi. Praesent enim nisl, bibendum vitae ante et, placerat pharetra magna. Donec facilisis nisl turpis, eget facilisis turpis semper non. Maecenas luctus ligula tincidunt iasdsd vitae ante et, 
-				  			<br /><br />
-				  			Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed consectetur erat. Maecenas in elementum libero. Sed consequat pellentesque ultricies. Ut laoreet vehicula nisl sed placerat. Duis posuere lectus n, eros et hendrerit pellentesque, ante magna condimentum sapien, eget ultrices eros libero non orci. Etiam varius diam lectus.
-							<br /><br />
+		  					<div class="row">
+								  <div class="col-md-6"><img id="profilePicView" src="<?php echo UserManager::getUserProfilePic($_SESSION['email'])['base64ProfilePic']?>" width="200" height="200">
+								  <form action='' id='profilePicForm' method='post' enctype="multipart/form-data">
+								  <div class="form-group">
+										<input type="file" name="profilePic" class="btn btn-default" id="profilePic" onchange='uploadProfilePic()'>
+								  </div>
+								</div>
+                                  <div class="col-md-6">Email : <?php echo $_SESSION['email']?></div>
+                              </div>
 		  				</div>
 		  			</div>
 		  		</div>
@@ -248,6 +254,7 @@ require("../includes/sessionCheck.php");
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../js/custom.js"></script>
+	<script src="../js/custom.js"></script>
+	<script src="../js/jqueryUtils.js"></script>
   </body>
 </html>
