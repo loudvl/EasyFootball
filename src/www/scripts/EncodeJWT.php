@@ -1,5 +1,5 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once '../vendors/autoload.php';
 use \Firebase\JWT\JWT;
 
 const KEY = "Super";

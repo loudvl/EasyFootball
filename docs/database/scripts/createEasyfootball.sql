@@ -16,6 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `match`
+--
+
+DROP TABLE IF EXISTS `match`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `match` (
+  `idMatch` int NOT NULL AUTO_INCREMENT,
+  `idTeam1` int NOT NULL,
+  `idTeam2` int NOT NULL,
+  `team1Score` int NOT NULL,
+  `team2Score` int NOT NULL,
+  `stadium` varchar(400) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `matchState` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `startDateTime` datetime NOT NULL,
+  PRIMARY KEY (`idMatch`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `match`
+--
+
+LOCK TABLES `match` WRITE;
+/*!40000 ALTER TABLE `match` DISABLE KEYS */;
+INSERT INTO `match` VALUES (3,7,10,0,0,'Parc des princes','Not Started','2020-06-02 20:45:00');
+/*!40000 ALTER TABLE `match` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `team`
 --
 
@@ -23,12 +53,11 @@ DROP TABLE IF EXISTS `team`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `team` (
-  `idteam` int NOT NULL,
-  `name` varchar(45) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`idteam`),
-  UNIQUE KEY `idteam_UNIQUE` (`idteam`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `idTeam` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `country` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`idTeam`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +66,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
+INSERT INTO `team` VALUES (7,'Paris-saint-germain','France'),(8,'Manchester United','Angleterre'),(9,'Marseille','France'),(10,'Lyon','France'),(11,'Fc Sion','Suisse'),(12,'FC Bale','Suisse');
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,4 +140,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-21 22:04:38
+-- Dump completed on 2020-05-22 13:15:44
