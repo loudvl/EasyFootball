@@ -92,7 +92,7 @@ require("../managers/UserManager.php");
 		  		<div class="col-md-6">
 		  			<div class="content-box-large">
 		  				<div class="panel-heading">
-							<div class="panel-title">Welcome <?php echo $_SESSION['email'];?></div>
+							<div class="panel-title">Welcome <?php echo $_SESSION[SESSION_EMAIL];?></div>
 							
 							<div class="panel-options">
 								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
@@ -101,13 +101,13 @@ require("../managers/UserManager.php");
 						</div>
 		  				<div class="panel-body">
 		  					<div class="row">
-								  <div class="col-md-6"><img id="profilePicView" src="<?php echo UserManager::getUserProfilePic($_SESSION['email'])['base64ProfilePic']?>" width="200" height="200">
+								  <div class="col-md-6"><img id="profilePicView" src="<?php echo UserManager::getUserProfilePic($_SESSION[SESSION_EMAIL])['base64ProfilePic']?>" width="200" height="200">
 								  <form action='' id='profilePicForm' method='post' enctype="multipart/form-data">
 								  <div class="form-group">
 										<input type="file" name="profilePic" class="btn btn-default" id="profilePic" onchange='uploadProfilePic()'>
 								  </div>
 								</div>
-                                  <div class="col-md-6">Email : <?php echo $_SESSION['email']?></div>
+                                  <div class="col-md-6">Email : <?php echo $_SESSION[SESSION_EMAIL]?></div>
                               </div>
 		  				</div>
 		  			</div>

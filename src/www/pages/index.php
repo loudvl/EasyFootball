@@ -91,7 +91,7 @@ require("../includes/sessionCheck.php");
 		  		<div class="col-md-6">
 		  			<div class="content-box-large">
 		  				<div class="panel-heading">
-							<div class="panel-title">Welcome <?php echo $_SESSION['email'];?></div>
+							<div class="panel-title">Welcome <?php echo $_SESSION[SESSION_EMAIL];?></div>
 							
 							<div class="panel-options">
 								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>

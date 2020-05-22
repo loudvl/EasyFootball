@@ -1,9 +1,10 @@
 <?php
+require("../config/sessionConst.php");
 session_start();
 
-if(isset($_SESSION['email']))
+if(isset($_SESSION[SESSION_EMAIL]))
 {
-    if($_SESSION['email'] != "")
+    if($_SESSION[SESSION_EMAIL] != "")
     {
         require("../db/database.php");
         if (!isset($_FILES['profilePic']) ||
@@ -23,7 +24,7 @@ if(isset($_SESSION['email']))
         $sql = "UPDATE user SET base64ProfilePic = :pic WHERE email = :email";
         $stmt = Database::prepare($sql);
         $stmt->bindParam(':pic', $src);
-        $stmt->bindParam(':email', $_SESSION['email']);
+        $stmt->bindParam(':email', $_SESSION[SESSION_EMAIL]);
         $stmt->execute();
     }
 }
