@@ -1,0 +1,133 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "BrowserWindow",
+                    "zOrder": "0",
+                    "w": "600",
+                    "h": "540",
+                    "measuredW": "450",
+                    "measuredH": "400",
+                    "x": "461",
+                    "y": "134",
+                    "properties": {
+                        "text": "Login Page\nhttps://"
+                    }
+                },
+                {
+                    "ID": "1",
+                    "typeID": "Label",
+                    "zOrder": "1",
+                    "measuredW": "212",
+                    "measuredH": "28",
+                    "x": "540",
+                    "y": "215",
+                    "properties": {
+                        "text": "Evénements en direct",
+                        "bold": "true",
+                        "size": "20"
+                    }
+                },
+                {
+                    "ID": "2",
+                    "typeID": "Canvas",
+                    "zOrder": "2",
+                    "w": "240",
+                    "h": "175",
+                    "measuredW": "100",
+                    "measuredH": "70",
+                    "x": "640",
+                    "y": "320"
+                },
+                {
+                    "ID": "3",
+                    "typeID": "TextInput",
+                    "zOrder": "3",
+                    "w": "161",
+                    "measuredW": "72",
+                    "measuredH": "27",
+                    "x": "680",
+                    "y": "366",
+                    "properties": {
+                        "text": "Nickname"
+                    }
+                },
+                {
+                    "ID": "4",
+                    "typeID": "TextInput",
+                    "zOrder": "4",
+                    "w": "161",
+                    "measuredW": "70",
+                    "measuredH": "27",
+                    "x": "680",
+                    "y": "409",
+                    "properties": {
+                        "text": "Password"
+                    }
+                },
+                {
+                    "ID": "5",
+                    "typeID": "Button",
+                    "zOrder": "5",
+                    "w": "82",
+                    "h": "27",
+                    "measuredW": "56",
+                    "measuredH": "27",
+                    "x": "720",
+                    "y": "452",
+                    "properties": {
+                        "text": "Login",
+                        "color": "545684"
+                    }
+                },
+                {
+                    "ID": "7",
+                    "typeID": "Link",
+                    "zOrder": "6",
+                    "measuredW": "46",
+                    "measuredH": "21",
+                    "x": "818",
+                    "y": "501",
+                    "properties": {
+                        "text": "Sign up"
+                    }
+                },
+                {
+                    "ID": "8",
+                    "typeID": "Label",
+                    "zOrder": "7",
+                    "measuredW": "79",
+                    "measuredH": "21",
+                    "x": "730",
+                    "y": "501",
+                    "properties": {
+                        "text": "No account ?"
+                    }
+                },
+                {
+                    "ID": "9",
+                    "typeID": "HRule",
+                    "zOrder": "8",
+                    "w": "600",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "461",
+                    "y": "243"
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Login",
+            "order": 1050765.6727556454,
+            "parentID": null
+        },
+        "resourceID": "3D075EFD-8B1D-461E-B8CA-0008BE3DA7E9",
+        "mockupH": "540",
+        "mockupW": "600",
+        "measuredW": "1061",
+        "measuredH": "674",
+        "version": "1.0"
+    }
+}

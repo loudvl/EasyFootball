@@ -1,0 +1,159 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "BrowserWindow",
+                    "zOrder": "0",
+                    "w": "600",
+                    "h": "540",
+                    "measuredW": "450",
+                    "measuredH": "400",
+                    "x": "461",
+                    "y": "134",
+                    "properties": {
+                        "text": "Register Page\nhttps://"
+                    }
+                },
+                {
+                    "ID": "1",
+                    "typeID": "Label",
+                    "zOrder": "1",
+                    "measuredW": "212",
+                    "measuredH": "28",
+                    "x": "540",
+                    "y": "215",
+                    "properties": {
+                        "text": "Evénements en direct",
+                        "bold": "true",
+                        "size": "20"
+                    }
+                },
+                {
+                    "ID": "2",
+                    "typeID": "Canvas",
+                    "zOrder": "2",
+                    "w": "240",
+                    "h": "228",
+                    "measuredW": "100",
+                    "measuredH": "70",
+                    "x": "640",
+                    "y": "320"
+                },
+                {
+                    "ID": "3",
+                    "typeID": "TextInput",
+                    "zOrder": "3",
+                    "w": "88",
+                    "measuredW": "72",
+                    "measuredH": "27",
+                    "x": "680",
+                    "y": "348",
+                    "properties": {
+                        "text": "Nickname"
+                    }
+                },
+                {
+                    "ID": "4",
+                    "typeID": "TextInput",
+                    "zOrder": "4",
+                    "w": "161",
+                    "measuredW": "70",
+                    "measuredH": "27",
+                    "x": "680",
+                    "y": "435",
+                    "properties": {
+                        "text": "Password"
+                    }
+                },
+                {
+                    "ID": "5",
+                    "typeID": "Button",
+                    "zOrder": "5",
+                    "w": "82",
+                    "h": "27",
+                    "measuredW": "75",
+                    "measuredH": "27",
+                    "x": "720",
+                    "y": "512",
+                    "properties": {
+                        "text": "Register",
+                        "color": "545684"
+                    }
+                },
+                {
+                    "ID": "7",
+                    "typeID": "TextInput",
+                    "zOrder": "6",
+                    "w": "161",
+                    "measuredW": "120",
+                    "measuredH": "27",
+                    "x": "680",
+                    "y": "478",
+                    "properties": {
+                        "text": "Confirm Password"
+                    }
+                },
+                {
+                    "ID": "8",
+                    "typeID": "TextInput",
+                    "zOrder": "7",
+                    "w": "161",
+                    "measuredW": "51",
+                    "measuredH": "27",
+                    "x": "680",
+                    "y": "390",
+                    "properties": {
+                        "text": "E-Mail"
+                    }
+                },
+                {
+                    "ID": "9",
+                    "typeID": "Link",
+                    "zOrder": "8",
+                    "measuredW": "32",
+                    "measuredH": "21",
+                    "x": "826",
+                    "y": "555",
+                    "properties": {
+                        "text": "Login"
+                    }
+                },
+                {
+                    "ID": "10",
+                    "typeID": "Label",
+                    "zOrder": "9",
+                    "measuredW": "157",
+                    "measuredH": "21",
+                    "x": "664",
+                    "y": "555",
+                    "properties": {
+                        "text": "Already have an account ?"
+                    }
+                },
+                {
+                    "ID": "11",
+                    "typeID": "HRule",
+                    "zOrder": "10",
+                    "w": "600",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "461",
+                    "y": "243"
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Register",
+            "order": 1050775.7776355038,
+            "parentID": null
+        },
+        "resourceID": "987CCB71-48E1-4B73-BD6F-3CFF4B29925A",
+        "mockupH": "540",
+        "mockupW": "600",
+        "measuredW": "1061",
+        "measuredH": "674",
+        "version": "1.0"
+    }
+}

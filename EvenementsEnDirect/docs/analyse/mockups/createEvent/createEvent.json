@@ -1,0 +1,263 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "BrowserWindow",
+                    "zOrder": "0",
+                    "w": "600",
+                    "h": "540",
+                    "measuredW": "450",
+                    "measuredH": "400",
+                    "x": "461",
+                    "y": "134",
+                    "locked": "true",
+                    "properties": {
+                        "text": "Create event\nhttps://"
+                    }
+                },
+                {
+                    "ID": "1",
+                    "typeID": "Label",
+                    "zOrder": "1",
+                    "measuredW": "212",
+                    "measuredH": "28",
+                    "x": "540",
+                    "y": "215",
+                    "properties": {
+                        "text": "Evénements en direct",
+                        "bold": "true",
+                        "size": "20"
+                    }
+                },
+                {
+                    "ID": "11",
+                    "typeID": "HRule",
+                    "zOrder": "2",
+                    "w": "600",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "461",
+                    "y": "243"
+                },
+                {
+                    "ID": "14",
+                    "typeID": "Image",
+                    "zOrder": "3",
+                    "w": "111",
+                    "h": "247",
+                    "measuredW": "77",
+                    "measuredH": "79",
+                    "x": "461",
+                    "y": "245"
+                },
+                {
+                    "ID": "15",
+                    "typeID": "Label",
+                    "zOrder": "4",
+                    "measuredW": "24",
+                    "measuredH": "21",
+                    "x": "505",
+                    "y": "324",
+                    "properties": {
+                        "text": "Nav"
+                    }
+                },
+                {
+                    "ID": "16",
+                    "typeID": "TextInput",
+                    "zOrder": "5",
+                    "w": "130",
+                    "measuredW": "77",
+                    "measuredH": "27",
+                    "x": "717",
+                    "y": "306",
+                    "properties": {
+                        "text": "Test event"
+                    }
+                },
+                {
+                    "ID": "18",
+                    "typeID": "TextArea",
+                    "zOrder": "6",
+                    "w": "180",
+                    "h": "81",
+                    "measuredW": "200",
+                    "measuredH": "140",
+                    "x": "717",
+                    "y": "339",
+                    "properties": {
+                        "text": "This is a test event for the mockups"
+                    }
+                },
+                {
+                    "ID": "19",
+                    "typeID": "Label",
+                    "zOrder": "7",
+                    "measuredW": "81",
+                    "measuredH": "21",
+                    "x": "605",
+                    "y": "269",
+                    "properties": {
+                        "text": "Create event",
+                        "bold": "true"
+                    }
+                },
+                {
+                    "ID": "20",
+                    "typeID": "ComboBox",
+                    "zOrder": "8",
+                    "measuredW": "70",
+                    "measuredH": "27",
+                    "x": "717",
+                    "y": "427",
+                    "properties": {
+                        "text": "Suisse"
+                    }
+                },
+                {
+                    "ID": "21",
+                    "typeID": "DateChooser",
+                    "zOrder": "9",
+                    "measuredW": "120",
+                    "measuredH": "25",
+                    "x": "717",
+                    "y": "461",
+                    "properties": {
+                        "text": "19/06/2020"
+                    }
+                },
+                {
+                    "ID": "22",
+                    "typeID": "Label",
+                    "zOrder": "10",
+                    "measuredW": "26",
+                    "measuredH": "21",
+                    "x": "686",
+                    "y": "309",
+                    "properties": {
+                        "text": "Title"
+                    }
+                },
+                {
+                    "ID": "23",
+                    "typeID": "Label",
+                    "zOrder": "11",
+                    "measuredW": "67",
+                    "measuredH": "21",
+                    "x": "645",
+                    "y": "339",
+                    "properties": {
+                        "text": "Description"
+                    }
+                },
+                {
+                    "ID": "24",
+                    "typeID": "Label",
+                    "zOrder": "12",
+                    "measuredW": "48",
+                    "measuredH": "21",
+                    "x": "664",
+                    "y": "427",
+                    "properties": {
+                        "text": "Country"
+                    }
+                },
+                {
+                    "ID": "25",
+                    "typeID": "Label",
+                    "zOrder": "13",
+                    "measuredW": "28",
+                    "measuredH": "21",
+                    "x": "685",
+                    "y": "461",
+                    "properties": {
+                        "text": "Date"
+                    }
+                },
+                {
+                    "ID": "27",
+                    "typeID": "Canvas",
+                    "zOrder": "14",
+                    "w": "87",
+                    "h": "24",
+                    "measuredW": "100",
+                    "measuredH": "70",
+                    "x": "873",
+                    "y": "462"
+                },
+                {
+                    "ID": "28",
+                    "typeID": "VRule",
+                    "zOrder": "15",
+                    "h": "24",
+                    "measuredW": "10",
+                    "measuredH": "100",
+                    "x": "889",
+                    "y": "462"
+                },
+                {
+                    "ID": "29",
+                    "typeID": "RoundButton",
+                    "zOrder": "16",
+                    "w": "14",
+                    "h": "14",
+                    "measuredW": "32",
+                    "measuredH": "32",
+                    "x": "877",
+                    "y": "467"
+                },
+                {
+                    "ID": "30",
+                    "typeID": "Label",
+                    "zOrder": "17",
+                    "measuredW": "29",
+                    "measuredH": "21",
+                    "x": "841",
+                    "y": "463",
+                    "properties": {
+                        "text": "Time"
+                    }
+                },
+                {
+                    "ID": "31",
+                    "typeID": "Label",
+                    "zOrder": "18",
+                    "measuredW": "32",
+                    "measuredH": "21",
+                    "x": "910",
+                    "y": "464",
+                    "properties": {
+                        "text": "10:30"
+                    }
+                },
+                {
+                    "ID": "32",
+                    "typeID": "Button",
+                    "zOrder": "19",
+                    "w": "244",
+                    "h": "27",
+                    "measuredW": "65",
+                    "measuredH": "27",
+                    "x": "716",
+                    "y": "492",
+                    "properties": {
+                        "text": "Create"
+                    }
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Create event",
+            "order": 1050798.0513208266,
+            "parentID": null
+        },
+        "resourceID": "C1C0F503-3731-45B3-A5DC-627CEF28CC7B",
+        "mockupH": "540",
+        "mockupW": "600",
+        "measuredW": "1061",
+        "measuredH": "674",
+        "version": "1.0"
+    }
+}

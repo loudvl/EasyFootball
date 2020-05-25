@@ -1,0 +1,95 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "Canvas",
+                    "zOrder": "0",
+                    "w": "212",
+                    "h": "166",
+                    "measuredW": "100",
+                    "measuredH": "70",
+                    "x": "564",
+                    "y": "146"
+                },
+                {
+                    "ID": "1",
+                    "typeID": "HRule",
+                    "zOrder": "1",
+                    "w": "212",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "564",
+                    "y": "195"
+                },
+                {
+                    "ID": "2",
+                    "typeID": "HRule",
+                    "zOrder": "2",
+                    "w": "212",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "564",
+                    "y": "251"
+                },
+                {
+                    "ID": "4",
+                    "typeID": "Label",
+                    "zOrder": "3",
+                    "measuredW": "102",
+                    "measuredH": "28",
+                    "x": "619",
+                    "y": "162",
+                    "properties": {
+                        "text": "Dashboard",
+                        "bold": "true",
+                        "size": "20",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "5",
+                    "typeID": "Label",
+                    "zOrder": "4",
+                    "measuredW": "124",
+                    "measuredH": "28",
+                    "x": "608",
+                    "y": "213",
+                    "properties": {
+                        "text": "Create event",
+                        "bold": "true",
+                        "size": "20",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "6",
+                    "typeID": "Label",
+                    "zOrder": "5",
+                    "measuredW": "108",
+                    "measuredH": "28",
+                    "x": "616",
+                    "y": "268",
+                    "properties": {
+                        "text": "Disconnect",
+                        "bold": "true",
+                        "size": "20",
+                        "align": "center"
+                    }
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Nav",
+            "order": 513899.66207696527,
+            "parentID": null
+        },
+        "resourceID": "277DC0CC-43AC-4119-8811-7CDE90916EB8",
+        "mockupH": "166",
+        "mockupW": "212",
+        "measuredW": "776",
+        "measuredH": "312",
+        "version": "1.0"
+    }
+}

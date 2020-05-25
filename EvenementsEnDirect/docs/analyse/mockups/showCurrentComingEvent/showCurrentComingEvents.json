@@ -1,0 +1,262 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "AndroidPhone",
+                    "zOrder": "0",
+                    "measuredW": "356",
+                    "measuredH": "725",
+                    "x": "516",
+                    "y": "29",
+                    "properties": {
+                        "resizing": "stretch"
+                    }
+                },
+                {
+                    "ID": "3",
+                    "typeID": "HRule",
+                    "zOrder": "1",
+                    "w": "321",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "536",
+                    "y": "208"
+                },
+                {
+                    "ID": "4",
+                    "typeID": "HRule",
+                    "zOrder": "2",
+                    "w": "321",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "536",
+                    "y": "259"
+                },
+                {
+                    "ID": "5",
+                    "typeID": "HRule",
+                    "zOrder": "3",
+                    "w": "321",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "536",
+                    "y": "310"
+                },
+                {
+                    "ID": "6",
+                    "typeID": "HRule",
+                    "zOrder": "4",
+                    "w": "321",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "536",
+                    "y": "364"
+                },
+                {
+                    "ID": "7",
+                    "typeID": "HRule",
+                    "zOrder": "5",
+                    "w": "321",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "536",
+                    "y": "160"
+                },
+                {
+                    "ID": "8",
+                    "typeID": "RadioButton",
+                    "zOrder": "6",
+                    "measuredW": "84",
+                    "measuredH": "23",
+                    "x": "566",
+                    "y": "137",
+                    "properties": {
+                        "text": "Old events"
+                    }
+                },
+                {
+                    "ID": "9",
+                    "typeID": "RadioButton",
+                    "zOrder": "7",
+                    "measuredW": "158",
+                    "measuredH": "23",
+                    "x": "680",
+                    "y": "137",
+                    "properties": {
+                        "text": "Current/coming events",
+                        "state": "selected"
+                    }
+                },
+                {
+                    "ID": "11",
+                    "typeID": "Paragraph",
+                    "zOrder": "8",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "543",
+                    "y": "170",
+                    "properties": {
+                        "text": "20/06/2020\n10:35:00\n"
+                    }
+                },
+                {
+                    "ID": "12",
+                    "typeID": "Paragraph",
+                    "zOrder": "9",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "543",
+                    "y": "218",
+                    "properties": {
+                        "text": "20/06/2020\n10:30:00\n"
+                    }
+                },
+                {
+                    "ID": "13",
+                    "typeID": "Paragraph",
+                    "zOrder": "10",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "543",
+                    "y": "269",
+                    "properties": {
+                        "text": "20/07/2020\n11:20:00\n"
+                    }
+                },
+                {
+                    "ID": "14",
+                    "typeID": "Paragraph",
+                    "zOrder": "11",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "543",
+                    "y": "320",
+                    "properties": {
+                        "text": "20/07/2020\n15:30:00\n"
+                    }
+                },
+                {
+                    "ID": "15",
+                    "typeID": "Label",
+                    "zOrder": "12",
+                    "measuredW": "80",
+                    "measuredH": "21",
+                    "x": "643",
+                    "y": "178",
+                    "properties": {
+                        "text": "Birthday Jack"
+                    }
+                },
+                {
+                    "ID": "16",
+                    "typeID": "Label",
+                    "zOrder": "13",
+                    "measuredW": "111",
+                    "measuredH": "21",
+                    "x": "643",
+                    "y": "226",
+                    "properties": {
+                        "text": "Human rights conv"
+                    }
+                },
+                {
+                    "ID": "17",
+                    "typeID": "Label",
+                    "zOrder": "14",
+                    "measuredW": "85",
+                    "measuredH": "21",
+                    "x": "643",
+                    "y": "277",
+                    "properties": {
+                        "text": "Birthday Annie"
+                    }
+                },
+                {
+                    "ID": "18",
+                    "typeID": "Label",
+                    "zOrder": "15",
+                    "measuredW": "59",
+                    "measuredH": "21",
+                    "x": "642",
+                    "y": "328",
+                    "properties": {
+                        "text": "COVID-19"
+                    }
+                },
+                {
+                    "ID": "19",
+                    "typeID": "Label",
+                    "zOrder": "16",
+                    "measuredW": "52",
+                    "measuredH": "21",
+                    "x": "777",
+                    "y": "178",
+                    "properties": {
+                        "text": "En cours"
+                    }
+                },
+                {
+                    "ID": "20",
+                    "typeID": "Label",
+                    "zOrder": "17",
+                    "measuredW": "52",
+                    "measuredH": "21",
+                    "x": "777",
+                    "y": "226",
+                    "properties": {
+                        "text": "En cours"
+                    }
+                },
+                {
+                    "ID": "23",
+                    "typeID": "Paragraph",
+                    "zOrder": "18",
+                    "w": "77",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "777",
+                    "y": "269",
+                    "properties": {
+                        "text": "Pas encore\ndémarré\n"
+                    }
+                },
+                {
+                    "ID": "24",
+                    "typeID": "Paragraph",
+                    "zOrder": "19",
+                    "w": "77",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "777",
+                    "y": "320",
+                    "properties": {
+                        "text": "Pas encore\ndémarré\n"
+                    }
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Show Current/coming events",
+            "order": 1050830.9845299334,
+            "parentID": null
+        },
+        "resourceID": "9359EBA4-18E1-4C08-BE76-07B91AEA5BF2",
+        "mockupH": "725",
+        "mockupW": "356",
+        "measuredW": "872",
+        "measuredH": "754",
+        "version": "1.0"
+    }
+}
