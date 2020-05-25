@@ -21,12 +21,12 @@
                     "ID": "1",
                     "typeID": "Label",
                     "zOrder": "1",
-                    "measuredW": "212",
+                    "measuredW": "107",
                     "measuredH": "28",
                     "x": "540",
                     "y": "215",
                     "properties": {
-                        "text": "Evénements en direct",
+                        "text": "Live events",
                         "bold": "true",
                         "size": "20"
                     }
@@ -211,12 +211,12 @@
                     "ID": "33",
                     "typeID": "Label",
                     "zOrder": "18",
-                    "measuredW": "64",
+                    "measuredW": "63",
                     "measuredH": "17",
                     "x": "598",
                     "y": "339",
                     "properties": {
-                        "text": "Nouvel an 2021",
+                        "text": "New Year 2021",
                         "size": "9"
                     }
                 },
@@ -224,12 +224,12 @@
                     "ID": "35",
                     "typeID": "Label",
                     "zOrder": "20",
-                    "measuredW": "28",
+                    "measuredW": "49",
                     "measuredH": "17",
-                    "x": "836",
+                    "x": "827",
                     "y": "339",
                     "properties": {
-                        "text": "Suisse",
+                        "text": "Switzerland",
                         "size": "9"
                     }
                 },
@@ -237,15 +237,16 @@
                     "ID": "37",
                     "typeID": "Paragraph",
                     "zOrder": "21",
-                    "w": "46",
+                    "w": "55",
                     "h": "27",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "884",
+                    "x": "879",
                     "y": "334",
                     "properties": {
-                        "text": "Pas encore\ndémarré\n",
-                        "size": "9"
+                        "text": "Not started\nyet",
+                        "size": "9",
+                        "align": "center"
                     }
                 },
                 {
@@ -301,12 +302,12 @@
                     "ID": "43",
                     "typeID": "Label",
                     "zOrder": "26",
-                    "measuredW": "67",
+                    "measuredW": "49",
                     "measuredH": "17",
                     "x": "598",
                     "y": "363",
                     "properties": {
-                        "text": "Visite du Louvre",
+                        "text": "Louvre visit",
                         "size": "9"
                     }
                 },
@@ -331,11 +332,12 @@
                     "h": "27",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "887",
-                    "y": "364",
+                    "x": "885",
+                    "y": "358",
                     "properties": {
-                        "text": "En cours\n",
-                        "size": "9"
+                        "text": "In progress\n",
+                        "size": "9",
+                        "align": "center"
                     }
                 },
                 {
@@ -413,25 +415,25 @@
                     "ID": "87",
                     "typeID": "Label",
                     "zOrder": "36",
-                    "measuredW": "57",
+                    "measuredW": "53",
                     "measuredH": "17",
                     "x": "598",
                     "y": "387",
                     "properties": {
                         "size": "9",
-                        "text": "Pâques 2020"
+                        "text": "Easter 2020"
                     }
                 },
                 {
                     "ID": "89",
                     "typeID": "Label",
                     "zOrder": "38",
-                    "measuredW": "28",
+                    "measuredW": "49",
                     "measuredH": "17",
-                    "x": "836",
-                    "y": "387",
+                    "x": "827",
+                    "y": "388",
                     "properties": {
-                        "text": "Suisse",
+                        "text": "Switzerland",
                         "size": "9"
                     }
                 },
@@ -446,8 +448,9 @@
                     "x": "892",
                     "y": "389",
                     "properties": {
-                        "text": "Passé\n",
-                        "size": "9"
+                        "text": "Past",
+                        "size": "9",
+                        "align": "center"
                     }
                 },
                 {
@@ -696,12 +699,12 @@
                     "ID": "113",
                     "typeID": "Label",
                     "zOrder": "57",
-                    "measuredW": "64",
+                    "measuredW": "63",
                     "measuredH": "17",
                     "x": "599",
                     "y": "517",
                     "properties": {
-                        "text": "Nouvel an 2021",
+                        "text": "New Year 2021",
                         "size": "9"
                     }
                 },
@@ -724,12 +727,12 @@
                     "ID": "115",
                     "typeID": "Label",
                     "zOrder": "59",
-                    "measuredW": "28",
+                    "measuredW": "49",
                     "measuredH": "17",
-                    "x": "769",
+                    "x": "758",
                     "y": "517",
                     "properties": {
-                        "text": "Suisse",
+                        "text": "Switzerland",
                         "size": "9"
                     }
                 },
@@ -741,11 +744,12 @@
                     "h": "27",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "822",
-                    "y": "542",
+                    "x": "819",
+                    "y": "536",
                     "properties": {
-                        "text": "En cours\n",
-                        "size": "9"
+                        "text": "In progress\n",
+                        "size": "9",
+                        "align": "center"
                     }
                 },
                 {
@@ -801,12 +805,12 @@
                     "ID": "121",
                     "typeID": "Label",
                     "zOrder": "65",
-                    "measuredW": "67",
+                    "measuredW": "49",
                     "measuredH": "17",
                     "x": "599",
                     "y": "541",
                     "properties": {
-                        "text": "Visite du Louvre",
+                        "text": "Louvre visit",
                         "size": "9"
                     }
                 },
@@ -842,15 +846,16 @@
                     "ID": "124",
                     "typeID": "Paragraph",
                     "zOrder": "68",
-                    "w": "46",
+                    "w": "58",
                     "h": "27",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "819",
+                    "x": "813",
                     "y": "512",
                     "properties": {
-                        "text": "Pas encore\ndémarré\n",
-                        "size": "9"
+                        "text": "Not started\nyet",
+                        "size": "9",
+                        "align": "center"
                     }
                 },
                 {

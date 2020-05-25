@@ -21,12 +21,12 @@
                     "ID": "1",
                     "typeID": "Label",
                     "zOrder": "1",
-                    "measuredW": "212",
+                    "measuredW": "107",
                     "measuredH": "28",
                     "x": "540",
                     "y": "215",
                     "properties": {
-                        "text": "Evénements en direct",
+                        "text": "Live events",
                         "bold": "true",
                         "size": "20"
                     }
@@ -133,6 +133,20 @@
                     "y": "428",
                     "properties": {
                         "text": "Push message"
+                    }
+                },
+                {
+                    "ID": "41",
+                    "typeID": "Button",
+                    "zOrder": "11",
+                    "w": "115",
+                    "h": "27",
+                    "measuredW": "91",
+                    "measuredH": "27",
+                    "x": "911",
+                    "y": "253",
+                    "properties": {
+                        "text": "Start event"
                     }
                 }
             ]

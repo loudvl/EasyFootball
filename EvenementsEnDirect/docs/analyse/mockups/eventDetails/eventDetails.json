@@ -95,12 +95,12 @@
                     "ID": "27",
                     "typeID": "Label",
                     "zOrder": "7",
-                    "measuredW": "20",
+                    "measuredW": "26",
                     "measuredH": "21",
                     "x": "780",
                     "y": "193",
                     "properties": {
-                        "text": "Fini"
+                        "text": "Past"
                     }
                 },
                 {
@@ -143,12 +143,12 @@
                     "ID": "31",
                     "typeID": "Label",
                     "zOrder": "11",
-                    "measuredW": "40",
+                    "measuredW": "70",
                     "measuredH": "21",
                     "x": "780",
                     "y": "214",
                     "properties": {
-                        "text": "Suisse"
+                        "text": "Switzerland"
                     }
                 },
                 {

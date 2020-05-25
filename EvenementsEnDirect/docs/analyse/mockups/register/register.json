@@ -20,12 +20,12 @@
                     "ID": "1",
                     "typeID": "Label",
                     "zOrder": "1",
-                    "measuredW": "212",
+                    "measuredW": "107",
                     "measuredH": "28",
                     "x": "540",
                     "y": "215",
                     "properties": {
-                        "text": "Evénements en direct",
+                        "text": "Live events",
                         "bold": "true",
                         "size": "20"
                     }

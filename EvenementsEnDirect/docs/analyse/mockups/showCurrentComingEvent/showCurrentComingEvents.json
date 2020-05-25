@@ -197,24 +197,24 @@
                     "ID": "19",
                     "typeID": "Label",
                     "zOrder": "16",
-                    "measuredW": "52",
+                    "measuredW": "68",
                     "measuredH": "21",
                     "x": "777",
                     "y": "178",
                     "properties": {
-                        "text": "En cours"
+                        "text": "In progress"
                     }
                 },
                 {
                     "ID": "20",
                     "typeID": "Label",
                     "zOrder": "17",
-                    "measuredW": "52",
+                    "measuredW": "68",
                     "measuredH": "21",
                     "x": "777",
                     "y": "226",
                     "properties": {
-                        "text": "En cours"
+                        "text": "In progress"
                     }
                 },
                 {
@@ -228,7 +228,8 @@
                     "x": "777",
                     "y": "269",
                     "properties": {
-                        "text": "Pas encore\ndémarré\n"
+                        "text": "Not started yet\n",
+                        "align": "center"
                     }
                 },
                 {
@@ -242,7 +243,8 @@
                     "x": "777",
                     "y": "320",
                     "properties": {
-                        "text": "Pas encore\ndémarré\n"
+                        "text": "Not started yet\n",
+                        "align": "center"
                     }
                 }
             ]
