@@ -141,22 +141,22 @@
                     "zOrder": "11",
                     "w": "115",
                     "h": "27",
-                    "measuredW": "91",
+                    "measuredW": "89",
                     "measuredH": "27",
                     "x": "911",
                     "y": "253",
                     "properties": {
-                        "text": "Start event"
+                        "text": "Stop event"
                     }
                 }
             ]
         },
         "attributes": {
-            "name": "Manage event",
-            "order": 1050818.706315205,
+            "name": "Manage event / Live",
+            "order": 1050825.047838371,
             "parentID": null
         },
-        "resourceID": "8B957967-096F-4D5A-A5F0-7A9FFDA9C649",
+        "resourceID": "8D7A2A0C-6036-4C9A-8CA7-AE98839EC0CD",
         "mockupH": "540",
         "mockupW": "600",
         "measuredW": "1061",

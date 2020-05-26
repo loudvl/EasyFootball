@@ -1,0 +1,170 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "BrowserWindow",
+                    "zOrder": "0",
+                    "w": "600",
+                    "h": "540",
+                    "measuredW": "450",
+                    "measuredH": "400",
+                    "x": "461",
+                    "y": "134",
+                    "locked": "true",
+                    "properties": {
+                        "text": "Manage event\nhttps://"
+                    }
+                },
+                {
+                    "ID": "1",
+                    "typeID": "Label",
+                    "zOrder": "1",
+                    "measuredW": "107",
+                    "measuredH": "28",
+                    "x": "540",
+                    "y": "215",
+                    "properties": {
+                        "text": "Live events",
+                        "bold": "true",
+                        "size": "20"
+                    }
+                },
+                {
+                    "ID": "11",
+                    "typeID": "HRule",
+                    "zOrder": "2",
+                    "w": "600",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "461",
+                    "y": "243"
+                },
+                {
+                    "ID": "14",
+                    "typeID": "Image",
+                    "zOrder": "3",
+                    "w": "111",
+                    "h": "247",
+                    "measuredW": "77",
+                    "measuredH": "79",
+                    "x": "461",
+                    "y": "245"
+                },
+                {
+                    "ID": "15",
+                    "typeID": "Label",
+                    "zOrder": "4",
+                    "measuredW": "24",
+                    "measuredH": "21",
+                    "x": "505",
+                    "y": "324",
+                    "properties": {
+                        "text": "Nav"
+                    }
+                },
+                {
+                    "ID": "19",
+                    "typeID": "Label",
+                    "zOrder": "5",
+                    "measuredW": "86",
+                    "measuredH": "21",
+                    "x": "605",
+                    "y": "269",
+                    "properties": {
+                        "text": "Manage event",
+                        "bold": "true"
+                    }
+                },
+                {
+                    "ID": "35",
+                    "typeID": "List",
+                    "zOrder": "6",
+                    "w": "421",
+                    "h": "66",
+                    "measuredW": "288",
+                    "measuredH": "126",
+                    "x": "605",
+                    "y": "292",
+                    "properties": {
+                        "text": "10/20/2020 10:30:00 | Ending event soon\n10/20/2020 10:29:47 | This is a test message\n10/20/2020 10:29:00 | Welcome everybody"
+                    }
+                },
+                {
+                    "ID": "36",
+                    "typeID": "HRule",
+                    "zOrder": "7",
+                    "w": "422",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "604",
+                    "y": "312"
+                },
+                {
+                    "ID": "37",
+                    "typeID": "HRule",
+                    "zOrder": "8",
+                    "w": "422",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "604",
+                    "y": "332"
+                },
+                {
+                    "ID": "39",
+                    "typeID": "TextInput",
+                    "zOrder": "9",
+                    "w": "307",
+                    "measuredW": "79",
+                    "measuredH": "27",
+                    "x": "604",
+                    "y": "428",
+                    "properties": {
+                        "state": "disabled"
+                    }
+                },
+                {
+                    "ID": "40",
+                    "typeID": "Button",
+                    "zOrder": "10",
+                    "w": "115",
+                    "h": "27",
+                    "measuredW": "111",
+                    "measuredH": "27",
+                    "x": "911",
+                    "y": "428",
+                    "properties": {
+                        "text": "Push message",
+                        "state": "disabled"
+                    }
+                },
+                {
+                    "ID": "41",
+                    "typeID": "Button",
+                    "zOrder": "11",
+                    "w": "115",
+                    "h": "27",
+                    "measuredW": "91",
+                    "measuredH": "27",
+                    "x": "911",
+                    "y": "253",
+                    "properties": {
+                        "text": "Start event"
+                    }
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Manage event/Not Live",
+            "order": 1050818.706315205,
+            "parentID": null
+        },
+        "resourceID": "8B957967-096F-4D5A-A5F0-7A9FFDA9C649",
+        "mockupH": "540",
+        "mockupW": "600",
+        "measuredW": "1061",
+        "measuredH": "674",
+        "version": "1.0"
+    }
+}
