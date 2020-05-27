@@ -12,7 +12,6 @@
                     "measuredH": "400",
                     "x": "461",
                     "y": "134",
-                    "locked": "true",
                     "properties": {
                         "text": "Manage event\nhttps://"
                     }
@@ -65,51 +64,198 @@
                     }
                 },
                 {
-                    "ID": "19",
+                    "ID": "51",
                     "typeID": "Label",
                     "zOrder": "5",
-                    "measuredW": "86",
+                    "measuredW": "148",
                     "measuredH": "21",
-                    "x": "605",
+                    "x": "600",
                     "y": "269",
                     "properties": {
-                        "text": "Manage event",
+                        "text": "Manage New Year 2020",
                         "bold": "true"
                     }
                 },
                 {
-                    "ID": "35",
-                    "typeID": "List",
+                    "ID": "54",
+                    "typeID": "Label",
                     "zOrder": "6",
-                    "w": "421",
-                    "h": "66",
-                    "measuredW": "288",
-                    "measuredH": "126",
-                    "x": "605",
-                    "y": "292",
+                    "measuredW": "74",
+                    "measuredH": "21",
+                    "x": "600",
+                    "y": "296",
                     "properties": {
-                        "text": "10/20/2020 10:30:00 | Ending event soon\n10/20/2020 10:29:47 | This is a test message\n10/20/2020 10:29:00 | Welcome everybody"
+                        "text": "Description :",
+                        "underline": "true"
                     }
                 },
                 {
-                    "ID": "36",
-                    "typeID": "HRule",
+                    "ID": "55",
+                    "typeID": "Label",
                     "zOrder": "7",
-                    "w": "422",
-                    "measuredW": "100",
-                    "measuredH": "10",
-                    "x": "604",
-                    "y": "312"
+                    "measuredW": "54",
+                    "measuredH": "21",
+                    "x": "905",
+                    "y": "369",
+                    "properties": {
+                        "text": "Country :",
+                        "underline": "true"
+                    }
                 },
                 {
-                    "ID": "37",
+                    "ID": "57",
+                    "typeID": "Paragraph",
+                    "zOrder": "9",
+                    "w": "81",
+                    "h": "36",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "957",
+                    "y": "296",
+                    "properties": {
+                        "text": "01/01/2020\n00:00:00\n",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "58",
+                    "typeID": "Paragraph",
+                    "zOrder": "10",
+                    "w": "81",
+                    "h": "36",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "958",
+                    "y": "370",
+                    "properties": {
+                        "text": "Switzerland",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "59",
+                    "typeID": "Label",
+                    "zOrder": "11",
+                    "measuredW": "37",
+                    "measuredH": "21",
+                    "x": "923",
+                    "y": "296",
+                    "properties": {
+                        "text": "Start :",
+                        "underline": "true"
+                    }
+                },
+                {
+                    "ID": "60",
+                    "typeID": "CheckBox",
+                    "zOrder": "12",
+                    "measuredW": "20",
+                    "measuredH": "23",
+                    "x": "1002",
+                    "y": "434",
+                    "properties": {
+                        "text": "",
+                        "state": "selected"
+                    }
+                },
+                {
+                    "ID": "61",
+                    "typeID": "Label",
+                    "zOrder": "13",
+                    "measuredW": "68",
+                    "measuredH": "21",
+                    "x": "930",
+                    "y": "435",
+                    "properties": {
+                        "text": "Show event"
+                    }
+                },
+                {
+                    "ID": "62",
+                    "typeID": "List",
+                    "zOrder": "14",
+                    "w": "421",
+                    "h": "68",
+                    "measuredW": "254",
+                    "measuredH": "126",
+                    "x": "601",
+                    "y": "500",
+                    "properties": {
+                        "text": "01/01/2020 00:01:05 | Good night\n01/01/2020 00:00:59 | Happy new year !\n01/01/2020 00:00:30 | Hello everyone !"
+                    }
+                },
+                {
+                    "ID": "63",
                     "typeID": "HRule",
-                    "zOrder": "8",
+                    "zOrder": "15",
                     "w": "422",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "604",
-                    "y": "332"
+                    "x": "600",
+                    "y": "520"
+                },
+                {
+                    "ID": "64",
+                    "typeID": "Label",
+                    "zOrder": "16",
+                    "measuredW": "30",
+                    "measuredH": "21",
+                    "x": "932",
+                    "y": "332",
+                    "properties": {
+                        "text": "End :"
+                    }
+                },
+                {
+                    "ID": "65",
+                    "typeID": "Paragraph",
+                    "zOrder": "17",
+                    "w": "92",
+                    "h": "41",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "953",
+                    "y": "332",
+                    "properties": {
+                        "text": "01/01/2020\n00:01:26",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "66",
+                    "typeID": "Paragraph",
+                    "zOrder": "8",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "600",
+                    "y": "317",
+                    "properties": {
+                        "text": "Little event to say happy\nnew year to everyone"
+                    }
+                },
+                {
+                    "ID": "67",
+                    "typeID": "HRule",
+                    "zOrder": "18",
+                    "w": "422",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "598",
+                    "y": "542"
+                },
+                {
+                    "ID": "68",
+                    "typeID": "Button",
+                    "zOrder": "19",
+                    "w": "89",
+                    "h": "27",
+                    "measuredW": "100",
+                    "measuredH": "27",
+                    "x": "942",
+                    "y": "253",
+                    "properties": {
+                        "text": "Delete event"
+                    }
                 }
             ]
         },

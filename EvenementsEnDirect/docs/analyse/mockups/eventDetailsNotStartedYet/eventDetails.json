@@ -1,0 +1,148 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "AndroidPhone",
+                    "zOrder": "0",
+                    "measuredW": "356",
+                    "measuredH": "725",
+                    "x": "516",
+                    "y": "29",
+                    "properties": {
+                        "resizing": "stretch"
+                    }
+                },
+                {
+                    "ID": "19",
+                    "typeID": "PointyButton",
+                    "zOrder": "1",
+                    "measuredW": "72",
+                    "measuredH": "27",
+                    "x": "539",
+                    "y": "135",
+                    "properties": {
+                        "borderStyle": "none",
+                        "direction": "left",
+                        "text": "Events"
+                    }
+                },
+                {
+                    "ID": "20",
+                    "typeID": "HRule",
+                    "zOrder": "2",
+                    "w": "323",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "531",
+                    "y": "155"
+                },
+                {
+                    "ID": "21",
+                    "typeID": "Label",
+                    "zOrder": "3",
+                    "w": "158",
+                    "measuredW": "92",
+                    "measuredH": "28",
+                    "x": "616",
+                    "y": "165",
+                    "properties": {
+                        "text": "COVID-19",
+                        "size": "20",
+                        "bold": "true",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "24",
+                    "typeID": "Paragraph",
+                    "zOrder": "4",
+                    "w": "158",
+                    "h": "58",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "541",
+                    "y": "208",
+                    "properties": {
+                        "text": "During this event we'll talk\nabout the current world pandemic\n"
+                    }
+                },
+                {
+                    "ID": "25",
+                    "typeID": "Label",
+                    "zOrder": "5",
+                    "measuredW": "74",
+                    "measuredH": "21",
+                    "x": "575",
+                    "y": "193",
+                    "properties": {
+                        "text": "Description :"
+                    }
+                },
+                {
+                    "ID": "28",
+                    "typeID": "Label",
+                    "zOrder": "6",
+                    "measuredW": "104",
+                    "measuredH": "21",
+                    "x": "560",
+                    "y": "266",
+                    "properties": {
+                        "text": "Start Date/Time :"
+                    }
+                },
+                {
+                    "ID": "30",
+                    "typeID": "Label",
+                    "zOrder": "7",
+                    "measuredW": "54",
+                    "measuredH": "21",
+                    "x": "708",
+                    "y": "193",
+                    "properties": {
+                        "text": "Country :"
+                    }
+                },
+                {
+                    "ID": "31",
+                    "typeID": "Label",
+                    "zOrder": "8",
+                    "measuredW": "54",
+                    "measuredH": "21",
+                    "x": "767",
+                    "y": "193",
+                    "properties": {
+                        "text": "Germany"
+                    }
+                },
+                {
+                    "ID": "33",
+                    "typeID": "Paragraph",
+                    "zOrder": "9",
+                    "w": "80",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "576",
+                    "y": "281",
+                    "properties": {
+                        "text": "20/07/2020\n15:30:00\n",
+                        "align": "center"
+                    }
+                }
+            ]
+        },
+        "attributes": {
+            "name": "Event Details/ Not started yet",
+            "order": 1050852.6228722006,
+            "parentID": null
+        },
+        "resourceID": "AC902358-AF02-441A-AB2C-BE12B1AAF823",
+        "mockupH": "725",
+        "mockupW": "356",
+        "measuredW": "872",
+        "measuredH": "754",
+        "version": "1.0"
+    }
+}

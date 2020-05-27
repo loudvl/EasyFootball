@@ -1,11 +1,18 @@
 <?php
-require("../db/database.php");
+require("../classes/Database.php");
 class UserManager
 {
-    public static function Connect($email,$passwd)
+    /**
+     * Check if user log infos are good, return true or false
+     *
+     * @param [string] $nickname
+     * @param [string] $passwd
+     * @return bool
+     */
+    public static function connect($nickname,$passwd)
     {
         $passwd = sha1($passwd);
-        $sql = "SELECT email FROM user WHERE email = :email AND passwd = :passwd";
+        $sql = "SELECT NICKNAME FROM users WHERE NICKNAME = :nickname AND PASSWD = :passwd";
         $db = Database::getInstance();
         $query = null;
         try
@@ -19,8 +26,8 @@ class UserManager
 
     try
     {
-        $query->bindParam(':email',$email, PDO::PARAM_STR,120);
-        $query->bindParam(':passwd',$passwd, PDO::PARAM_STR,100);
+        $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+        $query->bindParam(':passwd',$passwd, PDO::PARAM_STR,30);
         $query->execute();
         if($query->fetch(PDO::FETCH_ASSOC) != null)
         {
@@ -29,13 +36,13 @@ class UserManager
     }
     catch(Exception $e)
     {
-        $result = false;
+        echo $e;
     }
 
     return false;
     }
 
-    public static function UserExist($email)
+    public static function userExist($email)
     {
         $sql = "SELECT email FROM user WHERE email = :email";
         $db = Database::getInstance();

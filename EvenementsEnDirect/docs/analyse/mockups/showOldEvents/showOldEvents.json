@@ -21,8 +21,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "208"
+                    "x": "533",
+                    "y": "245"
                 },
                 {
                     "ID": "4",
@@ -31,8 +31,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "259"
+                    "x": "533",
+                    "y": "296"
                 },
                 {
                     "ID": "5",
@@ -41,33 +41,23 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "310"
+                    "x": "533",
+                    "y": "347"
                 },
                 {
-                    "ID": "6",
+                    "ID": "7",
                     "typeID": "HRule",
                     "zOrder": "4",
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "364"
-                },
-                {
-                    "ID": "7",
-                    "typeID": "HRule",
-                    "zOrder": "5",
-                    "w": "321",
-                    "measuredW": "100",
-                    "measuredH": "10",
-                    "x": "536",
-                    "y": "160"
+                    "x": "533",
+                    "y": "197"
                 },
                 {
                     "ID": "8",
                     "typeID": "RadioButton",
-                    "zOrder": "6",
+                    "zOrder": "5",
                     "measuredW": "84",
                     "measuredH": "23",
                     "x": "566",
@@ -80,7 +70,7 @@
                 {
                     "ID": "9",
                     "typeID": "RadioButton",
-                    "zOrder": "7",
+                    "zOrder": "6",
                     "measuredW": "158",
                     "measuredH": "23",
                     "x": "680",
@@ -92,105 +82,166 @@
                 {
                     "ID": "11",
                     "typeID": "Paragraph",
+                    "zOrder": "7",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "532",
+                    "y": "207",
+                    "properties": {
+                        "text": "01/01/2020\n00:00:00\n",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "12",
+                    "typeID": "Paragraph",
                     "zOrder": "8",
                     "w": "84",
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "543",
-                    "y": "170",
+                    "x": "532",
+                    "y": "255",
                     "properties": {
-                        "text": "01/01/2020\n00:00:00\n"
+                        "text": "04/07/2019\n13:00:00",
+                        "align": "center"
                     }
                 },
                 {
-                    "ID": "12",
+                    "ID": "13",
                     "typeID": "Paragraph",
                     "zOrder": "9",
                     "w": "84",
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "543",
-                    "y": "218",
+                    "x": "532",
+                    "y": "306",
                     "properties": {
-                        "text": "01/01/2019\n00:00:00"
-                    }
-                },
-                {
-                    "ID": "13",
-                    "typeID": "Paragraph",
-                    "zOrder": "10",
-                    "w": "84",
-                    "h": "38",
-                    "measuredW": "275",
-                    "measuredH": "80",
-                    "x": "543",
-                    "y": "269",
-                    "properties": {
-                        "text": "01/01/2018\n00:00:00"
-                    }
-                },
-                {
-                    "ID": "14",
-                    "typeID": "Paragraph",
-                    "zOrder": "11",
-                    "w": "84",
-                    "h": "38",
-                    "measuredW": "275",
-                    "measuredH": "80",
-                    "x": "543",
-                    "y": "320",
-                    "properties": {
-                        "text": "01/01/2017\n00:00:00\n"
+                        "text": "01/01/2018\n00:00:00",
+                        "align": "center"
                     }
                 },
                 {
                     "ID": "15",
                     "typeID": "Label",
-                    "zOrder": "12",
+                    "zOrder": "10",
                     "measuredW": "94",
                     "measuredH": "21",
-                    "x": "701",
-                    "y": "178",
+                    "x": "725",
+                    "y": "215",
                     "properties": {
                         "text": "New Year 2020"
                     }
                 },
                 {
-                    "ID": "16",
-                    "typeID": "Label",
-                    "zOrder": "13",
-                    "measuredW": "90",
-                    "measuredH": "21",
-                    "x": "698",
-                    "y": "226",
-                    "properties": {
-                        "text": "New Year 2019"
-                    }
-                },
-                {
                     "ID": "17",
                     "typeID": "Label",
-                    "zOrder": "14",
+                    "zOrder": "12",
                     "measuredW": "90",
                     "measuredH": "21",
-                    "x": "698",
-                    "y": "277",
+                    "x": "727",
+                    "y": "314",
                     "properties": {
                         "text": "New Year 2018"
                     }
                 },
                 {
-                    "ID": "18",
+                    "ID": "19",
+                    "typeID": "Label",
+                    "zOrder": "13",
+                    "measuredW": "31",
+                    "measuredH": "21",
+                    "x": "558",
+                    "y": "176",
+                    "properties": {
+                        "text": "Start"
+                    }
+                },
+                {
+                    "ID": "20",
+                    "typeID": "Label",
+                    "zOrder": "14",
+                    "measuredW": "23",
+                    "measuredH": "21",
+                    "x": "659",
+                    "y": "178",
+                    "properties": {
+                        "text": "End"
+                    }
+                },
+                {
+                    "ID": "21",
                     "typeID": "Label",
                     "zOrder": "15",
-                    "measuredW": "90",
+                    "measuredW": "26",
                     "measuredH": "21",
-                    "x": "698",
-                    "y": "328",
+                    "x": "759",
+                    "y": "176",
                     "properties": {
-                        "text": "New Year 2017"
+                        "text": "Title"
+                    }
+                },
+                {
+                    "ID": "22",
+                    "typeID": "Paragraph",
+                    "zOrder": "16",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "629",
+                    "y": "207",
+                    "properties": {
+                        "text": "01/01/2020\n00:01:26",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "23",
+                    "typeID": "Paragraph",
+                    "zOrder": "17",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "629",
+                    "y": "255",
+                    "properties": {
+                        "text": "04/07/2019\n14:55:13",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "24",
+                    "typeID": "Paragraph",
+                    "zOrder": "18",
+                    "w": "84",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "629",
+                    "y": "306",
+                    "properties": {
+                        "text": "01/01/2018\n01:36:24\n",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "26",
+                    "typeID": "Paragraph",
+                    "zOrder": "11",
+                    "w": "124",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "710",
+                    "y": "255",
+                    "properties": {
+                        "text": "Independence Day\n2019",
+                        "align": "center"
                     }
                 }
             ]

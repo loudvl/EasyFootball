@@ -12,7 +12,6 @@
                     "measuredH": "400",
                     "x": "461",
                     "y": "134",
-                    "locked": "true",
                     "properties": {
                         "text": "Edit event\nhttps://"
                     }
@@ -69,12 +68,12 @@
                     "typeID": "TextInput",
                     "zOrder": "5",
                     "w": "130",
-                    "measuredW": "77",
+                    "measuredW": "104",
                     "measuredH": "27",
                     "x": "717",
                     "y": "306",
                     "properties": {
-                        "text": "Test event"
+                        "text": "Tour de France"
                     }
                 },
                 {
@@ -88,7 +87,7 @@
                     "x": "717",
                     "y": "339",
                     "properties": {
-                        "text": "This is a test event for the mockups"
+                        "text": "This event will talk about the actors of this event"
                     }
                 },
                 {
@@ -108,12 +107,12 @@
                     "ID": "20",
                     "typeID": "ComboBox",
                     "zOrder": "8",
-                    "measuredW": "100",
+                    "measuredW": "71",
                     "measuredH": "27",
                     "x": "717",
                     "y": "427",
                     "properties": {
-                        "text": "Switzerland"
+                        "text": "France"
                     }
                 },
                 {
@@ -236,12 +235,12 @@
                     "ID": "32",
                     "typeID": "Button",
                     "zOrder": "19",
-                    "w": "182",
+                    "w": "89",
                     "h": "27",
                     "measuredW": "108",
                     "measuredH": "27",
-                    "x": "715",
-                    "y": "521",
+                    "x": "716",
+                    "y": "519",
                     "properties": {
                         "text": "Save changes"
                     }
@@ -263,12 +262,26 @@
                     "ID": "34",
                     "typeID": "Label",
                     "zOrder": "21",
-                    "measuredW": "63",
+                    "measuredW": "68",
                     "measuredH": "21",
-                    "x": "650",
+                    "x": "645",
                     "y": "488",
                     "properties": {
-                        "text": "Hide event"
+                        "text": "Show event"
+                    }
+                },
+                {
+                    "ID": "35",
+                    "typeID": "Button",
+                    "zOrder": "22",
+                    "w": "89",
+                    "h": "27",
+                    "measuredW": "100",
+                    "measuredH": "27",
+                    "x": "811",
+                    "y": "519",
+                    "properties": {
+                        "text": "Delete event"
                     }
                 }
             ]

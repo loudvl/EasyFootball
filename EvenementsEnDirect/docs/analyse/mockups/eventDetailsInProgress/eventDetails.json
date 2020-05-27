@@ -10,7 +10,6 @@
                     "measuredH": "725",
                     "x": "516",
                     "y": "29",
-                    "locked": "true",
                     "properties": {
                         "resizing": "stretch"
                     }
@@ -43,13 +42,13 @@
                     "ID": "21",
                     "typeID": "Label",
                     "zOrder": "3",
-                    "w": "102",
-                    "measuredW": "90",
+                    "w": "158",
+                    "measuredW": "130",
                     "measuredH": "28",
-                    "x": "642",
+                    "x": "616",
                     "y": "165",
                     "properties": {
-                        "text": "New Year",
+                        "text": "Birthday Jack",
                         "size": "20",
                         "bold": "true",
                         "align": "center"
@@ -64,7 +63,7 @@
                     "x": "541",
                     "y": "208",
                     "properties": {
-                        "text": "Little event to say happy\nnew year to everyone\n"
+                        "text": "Today's jack birthday !\n"
                     }
                 },
                 {
@@ -73,40 +72,16 @@
                     "zOrder": "5",
                     "measuredW": "74",
                     "measuredH": "21",
-                    "x": "574",
+                    "x": "575",
                     "y": "193",
                     "properties": {
                         "text": "Description :"
                     }
                 },
                 {
-                    "ID": "26",
-                    "typeID": "Label",
-                    "zOrder": "6",
-                    "measuredW": "39",
-                    "measuredH": "21",
-                    "x": "716",
-                    "y": "193",
-                    "properties": {
-                        "text": "State :"
-                    }
-                },
-                {
-                    "ID": "27",
-                    "typeID": "Label",
-                    "zOrder": "7",
-                    "measuredW": "26",
-                    "measuredH": "21",
-                    "x": "780",
-                    "y": "193",
-                    "properties": {
-                        "text": "Past"
-                    }
-                },
-                {
                     "ID": "28",
                     "typeID": "Label",
-                    "zOrder": "8",
+                    "zOrder": "6",
                     "measuredW": "104",
                     "measuredH": "21",
                     "x": "559",
@@ -116,25 +91,13 @@
                     }
                 },
                 {
-                    "ID": "29",
-                    "typeID": "Label",
-                    "zOrder": "9",
-                    "measuredW": "96",
-                    "measuredH": "21",
-                    "x": "716",
-                    "y": "251",
-                    "properties": {
-                        "text": "End Date/Time :"
-                    }
-                },
-                {
                     "ID": "30",
                     "typeID": "Label",
-                    "zOrder": "10",
+                    "zOrder": "7",
                     "measuredW": "54",
                     "measuredH": "21",
-                    "x": "700",
-                    "y": "214",
+                    "x": "708",
+                    "y": "193",
                     "properties": {
                         "text": "Country :"
                     }
@@ -142,47 +105,34 @@
                 {
                     "ID": "31",
                     "typeID": "Label",
-                    "zOrder": "11",
-                    "measuredW": "70",
+                    "zOrder": "8",
+                    "measuredW": "49",
                     "measuredH": "21",
-                    "x": "780",
-                    "y": "214",
+                    "x": "767",
+                    "y": "193",
                     "properties": {
-                        "text": "Switzerland"
+                        "text": "England"
                     }
                 },
                 {
                     "ID": "33",
                     "typeID": "Paragraph",
-                    "zOrder": "12",
-                    "w": "73",
+                    "zOrder": "9",
+                    "w": "81",
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
                     "x": "575",
                     "y": "266",
                     "properties": {
-                        "text": "01/01/2020\n00:00:00"
-                    }
-                },
-                {
-                    "ID": "34",
-                    "typeID": "Paragraph",
-                    "zOrder": "13",
-                    "w": "73",
-                    "h": "38",
-                    "measuredW": "275",
-                    "measuredH": "80",
-                    "x": "727",
-                    "y": "266",
-                    "properties": {
-                        "text": "01/01/2020\n00:01:26"
+                        "text": "20/06/2020\n10:30:00\n",
+                        "align": "center"
                     }
                 },
                 {
                     "ID": "35",
                     "typeID": "HRule",
-                    "zOrder": "14",
+                    "zOrder": "10",
                     "w": "319",
                     "measuredW": "100",
                     "measuredH": "10",
@@ -192,7 +142,7 @@
                 {
                     "ID": "36",
                     "typeID": "HRule",
-                    "zOrder": "15",
+                    "zOrder": "11",
                     "w": "319",
                     "measuredW": "100",
                     "measuredH": "10",
@@ -202,7 +152,7 @@
                 {
                     "ID": "37",
                     "typeID": "HRule",
-                    "zOrder": "16",
+                    "zOrder": "12",
                     "w": "319",
                     "measuredW": "100",
                     "measuredH": "10",
@@ -212,7 +162,7 @@
                 {
                     "ID": "40",
                     "typeID": "HRule",
-                    "zOrder": "17",
+                    "zOrder": "13",
                     "w": "319",
                     "measuredW": "100",
                     "measuredH": "10",
@@ -222,89 +172,92 @@
                 {
                     "ID": "41",
                     "typeID": "Paragraph",
-                    "zOrder": "18",
-                    "w": "73",
-                    "h": "38",
-                    "measuredW": "275",
-                    "measuredH": "80",
-                    "x": "539",
-                    "y": "437",
-                    "properties": {
-                        "text": "01/01/2020\n00:00:30"
-                    }
-                },
-                {
-                    "ID": "42",
-                    "typeID": "Paragraph",
-                    "zOrder": "19",
-                    "w": "73",
-                    "h": "38",
-                    "measuredW": "275",
-                    "measuredH": "80",
-                    "x": "540",
-                    "y": "476",
-                    "properties": {
-                        "text": "01/01/2020\n00:00:59"
-                    }
-                },
-                {
-                    "ID": "43",
-                    "typeID": "Paragraph",
-                    "zOrder": "20",
-                    "w": "73",
+                    "zOrder": "14",
+                    "w": "76",
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
                     "x": "540",
                     "y": "511",
                     "properties": {
-                        "text": "01/01/2020\n00:01:05"
+                        "text": "20/06/2020\n10:30:34\n",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "42",
+                    "typeID": "Paragraph",
+                    "zOrder": "15",
+                    "w": "76",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "540",
+                    "y": "476",
+                    "properties": {
+                        "text": "20/06/2020\n10:51:27\n",
+                        "align": "center"
+                    }
+                },
+                {
+                    "ID": "43",
+                    "typeID": "Paragraph",
+                    "zOrder": "16",
+                    "w": "76",
+                    "h": "38",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "540",
+                    "y": "437",
+                    "properties": {
+                        "text": "20/06/2020\n10:59:01\n",
+                        "align": "center"
                     }
                 },
                 {
                     "ID": "46",
                     "typeID": "Label",
-                    "zOrder": "21",
-                    "measuredW": "93",
+                    "zOrder": "17",
+                    "measuredW": "87",
                     "measuredH": "21",
-                    "x": "684",
-                    "y": "445",
+                    "x": "688",
+                    "y": "519",
                     "properties": {
-                        "text": "Hello everyone !"
+                        "text": "Hey everyone !"
                     }
                 },
                 {
                     "ID": "47",
                     "typeID": "Label",
-                    "zOrder": "22",
-                    "measuredW": "102",
+                    "zOrder": "18",
+                    "measuredW": "127",
                     "measuredH": "21",
-                    "x": "684",
+                    "x": "668",
                     "y": "484",
                     "properties": {
-                        "text": "Happy new year !"
+                        "text": "Happy birthday Jack !"
                     }
                 },
                 {
                     "ID": "48",
                     "typeID": "Label",
-                    "zOrder": "23",
-                    "measuredW": "65",
+                    "zOrder": "19",
+                    "measuredW": "108",
                     "measuredH": "21",
-                    "x": "684",
-                    "y": "519",
+                    "x": "678",
+                    "y": "445",
                     "properties": {
-                        "text": "Good night"
+                        "text": "See you next year"
                     }
                 }
             ]
         },
         "attributes": {
-            "name": "Event Details",
-            "order": 1050852.6228722006,
+            "name": "Event Details / In progress",
+            "order": 1050856.2314191146,
             "parentID": null
         },
-        "resourceID": "AC902358-AF02-441A-AB2C-BE12B1AAF823",
+        "resourceID": "B87DFCB5-8021-4127-AF3E-C8F83CE42AB8",
         "mockupH": "725",
         "mockupW": "356",
         "measuredW": "872",

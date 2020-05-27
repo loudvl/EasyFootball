@@ -21,8 +21,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "208"
+                    "x": "533",
+                    "y": "242"
                 },
                 {
                     "ID": "4",
@@ -31,8 +31,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "259"
+                    "x": "533",
+                    "y": "293"
                 },
                 {
                     "ID": "5",
@@ -41,8 +41,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "310"
+                    "x": "533",
+                    "y": "344"
                 },
                 {
                     "ID": "6",
@@ -51,8 +51,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "364"
+                    "x": "533",
+                    "y": "398"
                 },
                 {
                     "ID": "7",
@@ -61,8 +61,8 @@
                     "w": "321",
                     "measuredW": "100",
                     "measuredH": "10",
-                    "x": "536",
-                    "y": "160"
+                    "x": "533",
+                    "y": "194"
                 },
                 {
                     "ID": "8",
@@ -97,10 +97,11 @@
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "543",
-                    "y": "170",
+                    "x": "540",
+                    "y": "204",
                     "properties": {
-                        "text": "20/06/2020\n10:35:00\n"
+                        "text": "20/06/2020\n10:30:00\n",
+                        "align": "center"
                     }
                 },
                 {
@@ -111,10 +112,11 @@
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "543",
-                    "y": "218",
+                    "x": "540",
+                    "y": "252",
                     "properties": {
-                        "text": "20/06/2020\n10:30:00\n"
+                        "text": "20/06/2020\n10:35:00\n",
+                        "align": "center"
                     }
                 },
                 {
@@ -125,10 +127,11 @@
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "543",
-                    "y": "269",
+                    "x": "540",
+                    "y": "303",
                     "properties": {
-                        "text": "20/07/2020\n11:20:00\n"
+                        "text": "20/07/2020\n11:20:00\n",
+                        "align": "center"
                     }
                 },
                 {
@@ -139,10 +142,11 @@
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "543",
-                    "y": "320",
+                    "x": "540",
+                    "y": "354",
                     "properties": {
-                        "text": "20/07/2020\n15:30:00\n"
+                        "text": "20/07/2020\n15:30:00\n",
+                        "align": "center"
                     }
                 },
                 {
@@ -151,8 +155,8 @@
                     "zOrder": "12",
                     "measuredW": "80",
                     "measuredH": "21",
-                    "x": "643",
-                    "y": "178",
+                    "x": "642",
+                    "y": "212",
                     "properties": {
                         "text": "Birthday Jack"
                     }
@@ -163,8 +167,8 @@
                     "zOrder": "13",
                     "measuredW": "111",
                     "measuredH": "21",
-                    "x": "643",
-                    "y": "226",
+                    "x": "626",
+                    "y": "260",
                     "properties": {
                         "text": "Human rights conv"
                     }
@@ -175,8 +179,8 @@
                     "zOrder": "14",
                     "measuredW": "85",
                     "measuredH": "21",
-                    "x": "643",
-                    "y": "277",
+                    "x": "639",
+                    "y": "311",
                     "properties": {
                         "text": "Birthday Annie"
                     }
@@ -187,8 +191,8 @@
                     "zOrder": "15",
                     "measuredW": "59",
                     "measuredH": "21",
-                    "x": "642",
-                    "y": "328",
+                    "x": "652",
+                    "y": "362",
                     "properties": {
                         "text": "COVID-19"
                     }
@@ -199,8 +203,8 @@
                     "zOrder": "16",
                     "measuredW": "68",
                     "measuredH": "21",
-                    "x": "777",
-                    "y": "178",
+                    "x": "774",
+                    "y": "212",
                     "properties": {
                         "text": "In progress"
                     }
@@ -211,8 +215,8 @@
                     "zOrder": "17",
                     "measuredW": "68",
                     "measuredH": "21",
-                    "x": "777",
-                    "y": "226",
+                    "x": "774",
+                    "y": "260",
                     "properties": {
                         "text": "In progress"
                     }
@@ -225,8 +229,8 @@
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "777",
-                    "y": "269",
+                    "x": "774",
+                    "y": "303",
                     "properties": {
                         "text": "Not started yet\n",
                         "align": "center"
@@ -240,11 +244,47 @@
                     "h": "38",
                     "measuredW": "275",
                     "measuredH": "80",
-                    "x": "777",
-                    "y": "320",
+                    "x": "774",
+                    "y": "354",
                     "properties": {
                         "text": "Not started yet\n",
                         "align": "center"
+                    }
+                },
+                {
+                    "ID": "26",
+                    "typeID": "Label",
+                    "zOrder": "20",
+                    "measuredW": "31",
+                    "measuredH": "21",
+                    "x": "569",
+                    "y": "176",
+                    "properties": {
+                        "text": "Start"
+                    }
+                },
+                {
+                    "ID": "27",
+                    "typeID": "Label",
+                    "zOrder": "21",
+                    "measuredW": "26",
+                    "measuredH": "21",
+                    "x": "670",
+                    "y": "176",
+                    "properties": {
+                        "text": "Title"
+                    }
+                },
+                {
+                    "ID": "28",
+                    "typeID": "Label",
+                    "zOrder": "22",
+                    "measuredW": "33",
+                    "measuredH": "21",
+                    "x": "791",
+                    "y": "176",
+                    "properties": {
+                        "text": "State"
                     }
                 }
             ]
