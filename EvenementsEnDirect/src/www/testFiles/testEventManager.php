@@ -1,0 +1,111 @@
+<?php
+require('../managers/EventManager.php');
+//Getting all visible past events
+$result = EventManager::getAllVisibleEvents(0);
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+echo "<br>------------------------------------------";
+//Getting all visible in progress/not started yet events
+$result = EventManager::getAllVisibleEvents(1);
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+echo "<br>------------------------------------------";
+//Default : Getting all visible in progress/not started yet events
+$result = EventManager::getAllVisibleEvents();
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+echo "<br>------------------------------------------";
+
+
+
+//Getting all old events of a specific user
+$result = EventManager::getUserEvents("lou.dvl",0);
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+echo "<br>------------------------------------------";
+//Getting all in progress/not started yet events of a specific user
+$result = EventManager::getUserEvents("lou.dvl",1);
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+echo "<br>------------------------------------------";
+//Default : Getting all in progress/not started yet events of a specific user
+$result = EventManager::getUserEvents("lou.dvl");
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+echo "<br>------------------------------------------";
+
+//Creating an event with good values
+if(EventManager::createEvent("lou.dvl","New test event","Created test event","GB",(new DateTime("2020-10-08 12:30:00"))->format('Y-m-d H:i:s')))
+{
+    echo "<br>Event created";
+}
+else
+{
+    echo "<br>Couldn't create event";
+}
+
+echo "<br>------------------------------------------";
+
+//Creating an event with wrong country CODE
+if(EventManager::createEvent("lou.dvl","New test event","Created test event","EN",(new DateTime("2020-10-08 12:30:00"))->format('Y-m-d H:i:s')))
+{
+    echo "<br>Event created";
+}
+else
+{
+    echo "<br>Couldn't create event";
+}
+
+echo "<br>------------------------------------------";
+
+//Creating an event with good values
+if(EventManager::updateEvent(56,"New test event","Changed test event","GB",(new DateTime("2020-10-08 12:30:00"))->format('Y-m-d H:i:s'),0))
+{
+    echo "<br>Event updated";
+}
+else
+{
+    echo "<br>Couldn't update event";
+}
+
+echo "<br>------------------------------------------";
+
+$result = EventManager::getMessages(56);
+for($i = 0;$i < count($result);$i++)
+{
+    foreach($result[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
+?>

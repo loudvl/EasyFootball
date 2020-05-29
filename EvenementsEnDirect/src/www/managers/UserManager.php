@@ -11,27 +11,19 @@ class UserManager
      */
     public static function connect($nickname,$passwd)
     {
-        $passwd = sha1($passwd);
+        $passwd = hash("sha256",$passwd);
         $sql = "SELECT NICKNAME FROM users WHERE NICKNAME = :nickname AND PASSWD = :passwd";
-        $db = Database::getInstance();
-        $query = null;
-        try
-        {
-            $query = $db->prepare($sql);
-        }
-        catch(Exception $e)
-        {
-            echo $e;
-        }
 
     try
     {
+        $query = Database::getInstance()->prepare($sql);
         $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
-        $query->bindParam(':passwd',$passwd, PDO::PARAM_STR,30);
+        $query->bindParam(':passwd',$passwd, PDO::PARAM_STR,64);
         $query->execute();
         if($query->fetch(PDO::FETCH_ASSOC) != null)
         {
             return true;
+            exit();
         }
     }
     catch(Exception $e)
@@ -42,57 +34,39 @@ class UserManager
     return false;
     }
 
-    public static function userExist($email)
+    public static function userExist($nickname)
     {
-        $sql = "SELECT email FROM user WHERE email = :email";
-        $db = Database::getInstance();
-        $query = null;
-        try
-        {
-            $query = $db->prepare($sql);
-        }
-        catch(Exception $e)
-        {
-            echo $e;
-        }
+        $sql = "SELECT NICKNAME FROM users WHERE NICKNAME = :nickname";
 
         try
         {
-            $query->bindParam(':email',$email, PDO::PARAM_STR,120);
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,120);
             $query->execute();
             if($query->fetch(PDO::FETCH_ASSOC) != null)
             {
                 return true;
-            }
-            else{
-                return false;
+                exit();
             }
         }
         catch(Exception $e)
         {
         echo $e;
         }
+        return false;
     }
 
-    public static function createUser($user)
+    public static function createUser($nickname,$email,$passwd)
     {
-        $sql = "INSERT INTO user(email,passwd,TOKEN_VALIDATION,TOKEN_EXPIRATION_DATE) VALUES (:email,:passwd,:token,:token_expiration)";
-        $db = Database::getInstance();
-        $query = null;
+        $sql = "INSERT INTO users(NICKNAME,EMAIL,PASSWD,VALIDATION_TOKEN,VALIDATION_TOKEN_EXPIRATION) VALUES (:nickname,:email,:passwd,:token,:token_expiration)";
         $token = "";
-        try
-        {
-            $query = $db->prepare($sql);
-        }
-        catch(Exception $e)
-        {
-            echo $e;
-        }
 
         try
         {
-            $query->bindParam(':email',$user->email, PDO::PARAM_STR,120);
-            $query->bindParam(':passwd',$user->passwd, PDO::PARAM_STR,120);
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+            $query->bindParam(':email',$email, PDO::PARAM_STR,254);
+            $query->bindParam(':passwd',$passwd, PDO::PARAM_STR,64);
             $token = md5(time());
             $query->bindParam(':token',$token, PDO::PARAM_STR,32);
             $date = new DateTime(date("Y-m-d H:i:s"));
@@ -109,57 +83,24 @@ class UserManager
         return $token;
     }
 
-    public static function validateUser($token)
+    public static function validateUser($nickname,$token)
     {
-        $sql = "UPDATE user SET verified = 1 WHERE TOKEN_VALIDATION = :token";
-        $db = Database::getInstance();
-        $query = null;
-        try
-        {
-            $query = $db->prepare($sql);
-        }
-        catch(Exception $e)
-        {
-            echo $e;
-        }
+        $sql = "UPDATE users SET state = 1 WHERE VALIDATION_TOKEN = :token AND NICKNAME = :nickname";
 
         try
         {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
             $query->bindParam(':token',$token, PDO::PARAM_STR,32);
             $query->execute();
         }
         catch(Exception $e)
         {
-            $token = "";
             echo $e;
+            return false;
+            exit();
         }
-    }
-
-    public static function getUserProfilePic($email)
-    {
-        $sql = "SELECT base64ProfilePic FROM user WHERE email = :email";
-        $db = Database::getInstance();
-        $query = null;
-        try
-        {
-            $query = $db->prepare($sql);
-        }
-        catch(Exception $e)
-        {
-            echo $e;
-        }
-
-        try
-        {
-            $query->bindParam(':email',$email, PDO::PARAM_STR,150);
-            $query->execute();
-        }
-        catch(Exception $e)
-        {
-            echo $e;
-        }
-        $result = $query->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        return true;
     }
 }
 ?>

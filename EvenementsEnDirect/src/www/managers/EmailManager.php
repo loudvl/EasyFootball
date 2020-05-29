@@ -5,15 +5,17 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/swiftmailer5/lib/swift_required.php';
 
 class EmailManager
 {
-    private static $mailer;
-    public static function initMailer()
-    {
-        $transport = Swift_SmtpTransport::newInstance(EMAIL_SERVER, EMAIL_PORT, EMAIL_TRANS)->setUsername(EMAIL_USERNAME)->setPassword(EMAIL_PASSWORD);
-        // On crée un nouvelle instance de mail en utilisant le transport créé précédemment
-        self::$mailer = Swift_Mailer::newInstance($transport);
-    }
+    private static $mailer = null;
+    private static $transport = null;
+
     public static function sendEmail($to,$subject,$text)
     {
+        if(self::$transport == null || self::$mailer = null)
+        {
+            self::$transport = Swift_SmtpTransport::newInstance(EMAIL_SERVER, EMAIL_PORT, EMAIL_TRANS)->setUsername(EMAIL_USERNAME)->setPassword(EMAIL_PASSWORD);
+            // On crée un nouvelle instance de mail en utilisant le transport créé précédemment
+            self::$mailer = Swift_Mailer::newInstance(self::$transport);
+        }
         try {
                 // On crée un nouveau message
                 $message = Swift_Message::newInstance();

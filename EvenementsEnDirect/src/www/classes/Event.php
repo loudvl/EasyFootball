@@ -2,15 +2,18 @@
 class Event
 {
     public $id;
+    public $title;
     public $description;
     public $startDate;
     public $endDate;
     public $state;
     public $isVisible;
     public $country;
-    public function __construct($id,$description,$startDate,$endDate,$state,$isVisible,$country)
+    public $messages;
+    public function __construct($id,$title,$description,$state,$country,$startDate,$endDate,$isVisible='1')
     {
         $this->id = $id;
+        $this->title = $title;
         $this->description = $description;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
