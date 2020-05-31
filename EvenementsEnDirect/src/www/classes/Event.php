@@ -1,4 +1,7 @@
 <?php
+/**
+ * This class contains the event informations we get from database
+ */
 class Event
 {
     public $id;

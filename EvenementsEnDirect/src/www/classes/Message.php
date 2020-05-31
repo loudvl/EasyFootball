@@ -1,4 +1,7 @@
 <?php
+/**
+ * This class contains the informations of a message we get from database
+ */
 class Message
 {
     public $text;

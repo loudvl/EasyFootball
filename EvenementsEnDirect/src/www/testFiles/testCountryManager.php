@@ -49,4 +49,16 @@ else
 {
     echo "<br>No country label";
 }
+
+echo "<br>--------------------------------------------------------------------";
+//Get all countries labels
+$countries = CountryManager::getAllCountriesInfos();
+$size = count($countries);
+for($i = 0;$i < $size;$i++)
+{
+    foreach($countries[$i] as $key => $value)
+    {
+        echo "<br>".$key." : ".$value;
+    }
+}
 ?>

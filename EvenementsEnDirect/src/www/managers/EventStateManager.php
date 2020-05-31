@@ -3,6 +3,12 @@ require("../classes/Database.php");
 
 class EventStateManager
 {
+    /**
+     * Get the label of an event state from the database based on its code
+     *
+     * @param int $code
+     * @return string
+     */
     public static function getLabel($code)
     {
         $sql = "SELECT LABEL FROM Event_States WHERE CODE = :code";
@@ -16,11 +22,17 @@ class EventStateManager
         }
         catch(Exception $e)
         {
-            echo $e;
-            exit;
+            return FALSE;
         }
         return $result;
     }
+
+    /**
+     * Get the code of an event state from the database based on label
+     *
+     * @param string $label
+     * @return int
+     */
     public static function getCode($label)
     {
         $sql = "SELECT CODE FROM Event_States WHERE LABEL = :label";

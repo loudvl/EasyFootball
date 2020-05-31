@@ -8,6 +8,14 @@ class EmailManager
     private static $mailer = null;
     private static $transport = null;
 
+    /**
+     * This function initialize the message functionnality and sends an email.
+     *
+     * @param string $to
+     * @param string $subject
+     * @param string $text
+     * @return bool
+     */
     public static function sendEmail($to,$subject,$text)
     {
         if(self::$transport == null || self::$mailer = null)
@@ -32,9 +40,7 @@ class EmailManager
             }
         catch (Swift_TransportException $e)
             {
-                echo "Problème d'envoi de message: ".$e->getMessage();
-                return false;
-                exit();
+                return FALSE;
             }
             return true;
     }

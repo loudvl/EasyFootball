@@ -6,25 +6,29 @@ require("../managers/UserManager.php");
 $form_off = filter_input(INPUT_POST,'btnSubmit');
 if($form_off == "login")
 {
-    $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
-    $email = ($email == null) ? "" : $email;
+    $nickname = filter_input(INPUT_POST,'nickname',FILTER_SANITIZE_EMAIL);
+    $nickname = ($nickname == null) ? "" : $nickname;
     $passwd = filter_input(INPUT_POST,'passwd',FILTER_SANITIZE_STRING);
     $passwd = ($passwd == null) ? "" : $passwd;
-    if($email != null && $passwd != null)
+    if($nickname != null && $passwd != null)
     {
-        if(UserManager::Connect($email,$passwd) == true)
+        if(UserManager::Connect($nickname,$passwd) == true)
         {
-            SessionManager::addSession("email",$email);
-            echo "succes ".$email;
+            SessionManager::addNickname($nickname);
+            echo "Login successful : ".$nickname;
             header('Location: index.php');
-        }
+		}
+		else
+		{
+			echo "Login failed";
+		}
     }
 }
 ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Admin Theme v3</title>
+    <title>Live Events</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,7 +64,7 @@ if($form_off == "login")
 			            <div class="content-wrap">
 			                <h6>Sign In</h6>
 			            <form action='login.php' method='post'>
-			                <input class="form-control" name="email" type="text" placeholder="E-mail address">
+			                <input class="form-control" name="nickname" type="text" placeholder="Nickname">
 			                <input class="form-control" name="passwd" type="password" placeholder="Password">
 			                <div class="action">
 			                    <input type="submit" name ="btnSubmit" class="btn btn-primary signup" value="login">
@@ -71,7 +75,7 @@ if($form_off == "login")
 
 			        <div class="already">
 			            <p>Don't have an account yet?</p>
-			            <a href="signup.php">Sign Up</a>
+			            <a href="register.php">Sign Up</a>
 			        </div>
 			    </div>
 			</div>

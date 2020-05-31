@@ -1,6 +1,12 @@
 <?php
 class SessionManager
 {
+    /**
+     * Add the user nickname in the session
+     *
+     * @param string $nickname
+     * @return boolean
+     */
     public static function addNickname($nickname)
     {
         try
@@ -9,21 +15,30 @@ class SessionManager
         }
         catch(Exception $e)
         {
-            return false;
-            exit();
+            return FALSE;
         }
         return true;
     }
 
+    /**
+     * Get the user nickname from the session
+     *
+     * @return string
+     */
     public static function getNickname()
     {
         if(isset($_SESSION['NICKNAME']))
         {
             return $_SESSION['NICKNAME'];
-            exit();
         }
         return "";
     }
+
+    /**
+     * Destroy the current session
+     *
+     * @return boolean
+     */
     public static function destroySession()
     {
         try
@@ -40,8 +55,7 @@ class SessionManager
         }
         catch(Exception $e)
         {
-            return false;
-            exit();
+            return FALSE;
         }
         return true;
     }

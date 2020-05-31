@@ -1,12 +1,20 @@
 <?php
 require_once("../config/dbConfig.php");
-
+/**
+ * The Database class that is used to do the queries
+ */
 class Database
 {
     private static $_instance = null;
 
     private function __construct(){}
     private function __clone(){}
+
+    /**
+     * Return a PDO instance, create it if not done already.
+     *
+     * @return PDO
+     */
     public static function getInstance()
     {
         if(is_null(self::$_instance))
@@ -18,7 +26,7 @@ class Database
             }
             catch(Exception $e)
             {
-                echo "Error : ".$e;
+                return FALSE;
             }
         }
         return self::$_instance;

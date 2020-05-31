@@ -3,11 +3,11 @@ require("../classes/Database.php");
 class UserManager
 {
     /**
-     * Check if user log infos are good, return true or false
+     * Check if user log infos are good
      *
-     * @param [string] $nickname
-     * @param [string] $passwd
-     * @return bool
+     * @param string $nickname
+     * @param string $passwd
+     * @return boolean
      */
     public static function connect($nickname,$passwd)
     {
@@ -28,12 +28,17 @@ class UserManager
     }
     catch(Exception $e)
     {
-        echo $e;
+        return FALSE;
     }
 
     return false;
     }
-
+    /**
+     * Check if a user already exist in database
+     *
+     * @param string $nickname
+     * @return boolean
+     */
     public static function userExist($nickname)
     {
         $sql = "SELECT NICKNAME FROM users WHERE NICKNAME = :nickname";
@@ -46,16 +51,22 @@ class UserManager
             if($query->fetch(PDO::FETCH_ASSOC) != null)
             {
                 return true;
-                exit();
             }
         }
         catch(Exception $e)
         {
-        echo $e;
+            return FALSE;
         }
         return false;
     }
-
+    /**
+     * Create a user in database
+     *
+     * @param string $nickname
+     * @param string $email
+     * @param string $passwd
+     * @return string
+     */
     public static function createUser($nickname,$email,$passwd)
     {
         $sql = "INSERT INTO users(NICKNAME,EMAIL,PASSWD,VALIDATION_TOKEN,VALIDATION_TOKEN_EXPIRATION) VALUES (:nickname,:email,:passwd,:token,:token_expiration)";
@@ -77,15 +88,20 @@ class UserManager
         }
         catch(Exception $e)
         {
-            $token = "";
-            echo $e;
+            return FALSE;
         }
         return $token;
     }
-
+    /**
+     * Validate the user in the database with his unique token and nickname
+     *
+     * @param string $nickname
+     * @param string $token
+     * @return boolean
+     */
     public static function validateUser($nickname,$token)
     {
-        $sql = "UPDATE users SET state = 1 WHERE VALIDATION_TOKEN = :token AND NICKNAME = :nickname";
+        $sql = "UPDATE users SET state = 1 WHERE NICKNAME = :nickname AND VALIDATION_TOKEN = :token";
 
         try
         {
@@ -96,9 +112,7 @@ class UserManager
         }
         catch(Exception $e)
         {
-            echo $e;
-            return false;
-            exit();
+            return FALSE;
         }
         return true;
     }

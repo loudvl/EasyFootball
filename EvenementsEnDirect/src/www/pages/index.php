@@ -80,7 +80,7 @@ require("../includes/sessionCheck.php");
                          <!-- Sub menu -->
                          <ul>
                             <li><a href="login.php">Login</a></li>
-                            <li><a href="signup.php">Signup</a></li>
+                            <li><a href="register.php">Signup</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -91,7 +91,7 @@ require("../includes/sessionCheck.php");
 		  		<div class="col-md-6">
 		  			<div class="content-box-large">
 		  				<div class="panel-heading">
-							<div class="panel-title">Welcome <?php echo $_SESSION[SESSION_EMAIL];?></div>
+							<div class="panel-title">Welcome <?php echo $_SESSION['NICKNAME'];?></div>
 							
 							<div class="panel-options">
 								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>

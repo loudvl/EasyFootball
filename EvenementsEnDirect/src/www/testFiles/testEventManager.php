@@ -1,7 +1,7 @@
 <?php
 require('../managers/EventManager.php');
 //Getting all visible past events
-$result = EventManager::getAllVisibleEvents(0);
+$result = EventManager::getAllVisibleEvents(false);
 for($i = 0;$i < count($result);$i++)
 {
     foreach($result[$i] as $key => $value)
@@ -11,7 +11,7 @@ for($i = 0;$i < count($result);$i++)
 }
 echo "<br>------------------------------------------";
 //Getting all visible in progress/not started yet events
-$result = EventManager::getAllVisibleEvents(1);
+$result = EventManager::getAllVisibleEvents(true);
 for($i = 0;$i < count($result);$i++)
 {
     foreach($result[$i] as $key => $value)
@@ -34,7 +34,7 @@ echo "<br>------------------------------------------";
 
 
 //Getting all old events of a specific user
-$result = EventManager::getUserEvents("lou.dvl",0);
+$result = EventManager::getUserEvents("lou.dvl",false);
 for($i = 0;$i < count($result);$i++)
 {
     foreach($result[$i] as $key => $value)
@@ -44,7 +44,7 @@ for($i = 0;$i < count($result);$i++)
 }
 echo "<br>------------------------------------------";
 //Getting all in progress/not started yet events of a specific user
-$result = EventManager::getUserEvents("lou.dvl",1);
+$result = EventManager::getUserEvents("lou.dvl",true);
 for($i = 0;$i < count($result);$i++)
 {
     foreach($result[$i] as $key => $value)
@@ -100,6 +100,15 @@ else
 
 echo "<br>------------------------------------------";
 
+if(EventManager::addMessage("A new message to test the functionnality", 56))
+{
+    echo "<br>New message added";
+}
+else {
+    echo "<br>Can't add a new message";
+}
+
+echo "<br>------------------------------------------";
 $result = EventManager::getMessages(56);
 for($i = 0;$i < count($result);$i++)
 {

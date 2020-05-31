@@ -5,15 +5,21 @@ require("../classes/Message.php");
 
 class EventManager
 {
-    public static function getAllVisibleEvents($filter = 1)
+    /**
+     * Get every visible event from database
+     *
+     * @param boolean $filter
+     * @return array<Event>
+     */
+    public static function getAllVisibleEvents($filter = true)
     {
         $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries_ISO,Event_States_CODE FROM events WHERE IS_VISIBLE = 1";
         switch($filter)
         {
-            case 0:
+            case false:
             $sql.=" AND Event_States_CODE = 0 ORDER BY START_DATETIME DESC";
             break;
-            case 1:
+            case true:
             $sql.=" AND Event_States_CODE = 1 OR Event_States_CODE = 2 ORDER BY Event_States_CODE ASC, START_DATETIME DESC";
             break;
         }
@@ -30,21 +36,27 @@ class EventManager
         }
         catch(Exception $e)
         {
-            return array();
-            exit;
+            return FALSE;
         }
         return $result;
     }
 
-    public static function getUserEvents($nickname,$filter = 1)
+    /**
+     * Get all events of a specific user from database
+     *
+     * @param string $nickname
+     * @param integer $filter
+     * @return array<Event>
+     */
+    public static function getUserEvents($nickname,$filter = true)
     {
         $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries_ISO,Event_States_CODE,IS_VISIBLE FROM events WHERE Users_NICKNAME = :nickname";
         switch($filter)
         {
-            case 0:
+            case false:
             $sql.=" AND Event_States_CODE = 0 ORDER BY START_DATETIME DESC";
             break;
-            case 1:
+            case true:
             $sql.=" AND Event_States_CODE = 1 OR Event_States_CODE = 2 ORDER BY Event_States_CODE ASC, START_DATETIME DESC";
             break;
         }
@@ -62,15 +74,20 @@ class EventManager
         }
         catch(Exception $e)
         {
-            return array();
-            exit;
+            return FALSE;
         }
         return $result;
     }
 
+    /**
+     * Gets all the messages of an event from the database
+     *
+     * @param int $eventId
+     * @return array<Message>
+     */
     public static function getMessages($eventId)
     {
-        $sql = "SELECT TEXT,POSTING_DATE,Events_ID FROM messages WHERE Events_ID = :event ORDER BY POSTING_DATE ASC";
+        $sql = "SELECT TEXT,POSTING_DATE,Events_ID FROM messages WHERE Events_ID = :event ORDER BY POSTING_DATE DESC";
         try
         {
             $query = Database::getInstance()->prepare($sql);
@@ -85,12 +102,49 @@ class EventManager
         }
         catch(Exception $e)
         {
-            return array();
-            exit;
+            return FALSE;
         }
         return $messages;
     }
 
+    /**
+     * Add a new event message to the database
+     *
+     * @param string $message
+     * @param int $eventId
+     * @return boolean
+     */
+    public static function addMessage($message,$eventId)
+    {
+        $sql = "INSERT INTO messages(TEXT,POSTING_DATE,Events_ID) VALUES (:message,:postingDate,:eventId)";
+
+        try
+        {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':message',$message, PDO::PARAM_STR,254);
+            $query->bindParam(':eventId',$eventId, PDO::PARAM_INT);
+            $date = new DateTime(date("Y-m-d H:i:s"));
+            $datetime = $date->format('Y-m-d H:i:s');
+            $query->bindParam(':postingDate',$datetime, PDO::PARAM_STR,19);
+            $query->execute();
+        }
+        catch(Exception $e)
+        {
+            return FALSE;
+        }
+        return true;
+    }
+
+    /**
+     * Create a new event in the database
+     *
+     * @param string $nickname
+     * @param string $title
+     * @param string $description
+     * @param string $country
+     * @param DateTime $startDateTime
+     * @return boolean
+     */
     public static function createEvent($nickname,$title,$description,$country,$startDateTime)
     {
         $sql = "INSERT INTO events(TITLE,DESCRIPTION,START_DATETIME,Users_NICKNAME,Countries_ISO) VALUES (:title,:description,:startDateTime,:nickname,:country)";
@@ -107,13 +161,22 @@ class EventManager
         }
         catch(Exception $e)
         {
-            echo $e;
-            return false;
-            exit;
+            return FALSE;
         }
         return true;
     }
 
+    /**
+     * Update an event information in the database
+     *
+     * @param int $eventId
+     * @param string $title
+     * @param string $description
+     * @param string $country
+     * @param DateTime $startDateTime
+     * @param boolean $isVisible
+     * @return boolean
+     */
     public static function updateEvent($eventId,$title,$description,$country,$startDateTime,$isVisible)
     {
         $sql = "UPDATE events SET TITLE = :title,DESCRIPTION = :description,START_DATETIME = :startDateTime,Countries_ISO = :country,IS_VISIBLE = :isVisible WHERE ID = :id";
@@ -131,9 +194,7 @@ class EventManager
         }
         catch(Exception $e)
         {
-            echo $e;
-            return false;
-            exit;
+            return FALSE;
         }
         return true;
     }
