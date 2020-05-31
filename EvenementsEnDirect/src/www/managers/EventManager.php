@@ -29,7 +29,8 @@ class EventManager
             $query->execute();
             $tempResult = $query->fetchAll(PDO::FETCH_ASSOC);
             $result = array();
-            for($i=0;$i < count($tempResult);$i++)
+            $size = count($tempResult);
+            for($i=0;$i < $size;$i++)
             {
                 $result[$i] = new Event($tempResult[$i]['ID'],$tempResult[$i]['TITLE'],$tempResult[$i]['DESCRIPTION'],$tempResult[$i]['Event_States_CODE'],$tempResult[$i]['Countries_ISO'],$tempResult[$i]['START_DATETIME'],$tempResult[$i]['END_DATETIME']);
             }
@@ -67,7 +68,8 @@ class EventManager
             $query->execute();
             $tempResult = $query->fetchAll(PDO::FETCH_ASSOC);
             $result = array();
-            for($i=0;$i < count($tempResult);$i++)
+            $size = count($tempResult);
+            for($i=0;$i < $size;$i++)
             {
                 $result[$i] = new Event($tempResult[$i]['ID'],$tempResult[$i]['TITLE'],$tempResult[$i]['DESCRIPTION'],$tempResult[$i]['Event_States_CODE'],$tempResult[$i]['Countries_ISO'],$tempResult[$i]['START_DATETIME'],$tempResult[$i]['END_DATETIME'],$tempResult[$i]['IS_VISIBLE']);
             }
@@ -95,7 +97,8 @@ class EventManager
             $query->execute();
             $tempResult = $query->fetchAll(PDO::FETCH_ASSOC);
             $messages = array();
-            for($i=0;$i < count($tempResult);$i++)
+            $size = count($tempResult);
+            for($i=0;$i < $size;$i++)
             {
                 $messages[$i] = new Message($tempResult[$i]['TEXT'],$tempResult[$i]['POSTING_DATE'],$tempResult[$i]['Events_ID']);
             }
