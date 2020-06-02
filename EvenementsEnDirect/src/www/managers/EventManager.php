@@ -1,7 +1,7 @@
 <?php
-require('../classes/Database.php');
-require('../classes/Event.php');
-require("../classes/Message.php");
+require_once('../classes/Database.php');
+require_once('../classes/Event.php');
+require_once("../classes/Message.php");
 
 class EventManager
 {
@@ -150,14 +150,14 @@ class EventManager
      */
     public static function createEvent($nickname,$title,$description,$country,$startDateTime)
     {
-        $sql = "INSERT INTO events(TITLE,DESCRIPTION,START_DATETIME,Users_NICKNAME,Countries_ISO) VALUES (:title,:description,:startDateTime,:nickname,:country)";
-
+        $sql = "INSERT INTO events(TITLE,DESCRIPTION,START_DATETIME,Users_NICKNAME,Countries_ISO) VALUES (:title,:description,:startDateTime,:nickname,:country)";;
         try
         {
+            $dateTime = $startDateTime->format('Y-m-d H:i:s');
             $query = Database::getInstance()->prepare($sql);
             $query->bindParam(':title',$title, PDO::PARAM_STR,70);
             $query->bindParam(':description',$description, PDO::PARAM_STR,300);
-            $query->bindParam(':startDateTime',$startDateTime, PDO::PARAM_STR,19);
+            $query->bindParam(':startDateTime',$dateTime, PDO::PARAM_STR,19);
             $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
             $query->bindParam(':country',$country, PDO::PARAM_STR,2);
             $query->execute();
@@ -200,6 +200,29 @@ class EventManager
             return FALSE;
         }
         return true;
+    }
+
+    public static function getEvent($eventId,$nickname)
+    {
+        $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,IS_VISIBLE,Users_NICKNAME,Countries_ISO FROM events WHERE ID = :event AND Users_NICKNAME = :nickname AND Event_States_CODE = 2";
+        $result = null;
+        try
+        {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':event',$eventId, PDO::PARAM_INT);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+            $query->execute();
+            $tempResult = $query->fetch(PDO::FETCH_ASSOC);
+            if($tempResult['ID'] != null)
+            {
+                $result = new Event($tempResult['ID'],$tempResult['TITLE'],$tempResult['DESCRIPTION'],2,$tempResult['Countries_ISO'],$tempResult['START_DATETIME'],null,$tempResult['IS_VISIBLE']);
+            }
+        }
+        catch(Exception $e)
+        {
+            return FALSE;
+        }
+        return $result;
     }
 }
 ?>

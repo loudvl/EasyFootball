@@ -1,18 +1,15 @@
 <?php
-require('../managers/CountryManager.php');
+require_once('../managers/CountryManager.php');
 
 function genCountriesSelect()
 {
     $result = '';
     $countries = CountryManager::getAllCountriesInfos();
-    $size = count($countries);
-    for($i = 0;$i < $size;$i++)
+    foreach($countries as $value)
     {
-        foreach($countries[$i] as $key => $value)
-        {
-            $result .= "<option value='".." : ".$value;
-        }
+        $result .= "<option value='".$value->iso."'>".$value->label."</option>";
     }
+    return $result;
 }
 
 ?>

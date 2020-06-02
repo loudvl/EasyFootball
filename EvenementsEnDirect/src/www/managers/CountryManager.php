@@ -1,6 +1,6 @@
 <?php
-require('../classes/Database.php');
-require('../classes/Country.php');
+require_once('../classes/Database.php');
+require_once('../classes/Country.php');
 
 class CountryManager
 {
