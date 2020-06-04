@@ -1,4 +1,10 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
+
 if (strpos($_SERVER["SCRIPT_NAME"], "index.php"))  //cette page est index.php
 {
     echo '<ul class="nav">

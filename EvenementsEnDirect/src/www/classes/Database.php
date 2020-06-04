@@ -1,4 +1,9 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
 require_once("../config/dbConfig.php");
 /**
  * The Database class that is used to do the queries

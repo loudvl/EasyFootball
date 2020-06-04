@@ -1,4 +1,9 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
 require_once("../includes/sessionCheck.php");
 require_once('../includes/displayFunc.php');
 require_once("../managers/EventManager.php");

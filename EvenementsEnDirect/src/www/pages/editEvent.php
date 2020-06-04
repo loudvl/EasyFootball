@@ -1,21 +1,69 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
 require_once("../includes/sessionCheck.php");
 require_once("../managers/EventManager.php");
 require_once('../managers/SessionManager.php');
 require_once('../includes/displayFunc.php');
 $eventId = filter_input(INPUT_GET, 'eventId', FILTER_VALIDATE_INT);
-$eventId = ($eventId == null) ? "" : $eventId;
 if ($eventId != null) {
+
+	$form_off = filter_input(INPUT_POST,'saveBtn');
+if($form_off == "Save")
+{
+	$title = filter_input(INPUT_POST,'title',FILTER_SANITIZE_STRING);
+    $title = ($title == null) ? "" : $title;
+    $description = filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
+    $description = ($description == null) ? "" : $description;
+    $country = filter_input(INPUT_POST,'country',FILTER_SANITIZE_STRING);
+	$country = ($country == null) ? "" : $country;
+	$date = filter_input(INPUT_POST,'date',FILTER_SANITIZE_STRING);
+	$date = ($date == null) ? "" : $date;
+	$time = filter_input(INPUT_POST,'time',FILTER_SANITIZE_STRING);
+	$time = ($time == null) ? "" : $time.":00";
+	$showEvent = filter_input(INPUT_POST,'showEvent');
+	$showEvent = ($showEvent == null) ? 0 : 1;
+	
+	if($title != null && $description != null && $country != null && $date != null && $time != null)
+	{
+		$dateTime = null;
+		try
+		{
+			$dateTime = new DateTime(date('Y-m-d H:i:s',strtotime($date." ".$time)));
+		}
+		catch(Exception $e)
+		{
+
+		}
+		EventManager::updateEvent($eventId,$title,$description,$country,$dateTime->format('Y-m-d H:i:s'),$showEvent);
+	}
+}
 	$event = EventManager::getEvent($eventId, SessionManager::getNickname());
 	if ($event != null) {
-		$startDate = $event->startDateTime->format('Y-m-d');
-		$startTime = $event->startDateTime->format('H:i');
+		$dateTime = new DateTime(date("Y-m-d H:i:s",strtotime($event->startDateTime)));
+		$startDate = $dateTime->format("Y-m-d");
+		$startTime = $dateTime->format("H:i");
+		if($event->isVisible == true)
+		{
+			$checkBoxValue = "checked";
+		}
+		else
+		{
+			$checkBoxValue = "";
+		}
 	}
 	else
 	{
 		header('Location: index.php');
 	}
 }
+else
+	{
+		header('Location: index.php');
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,7 +123,7 @@ if ($eventId != null) {
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
-										<form class="form-horizontal" role="form">
+										<form class="form-horizontal" role="form" action="editEvent.php?eventId=<?php echo $event->id;?>" method="POST">
 											<div class="form-group">
 												<label for='title' class="col-sm-2 control-label">Title </label>
 												<div class="col-sm-7">
@@ -91,7 +139,7 @@ if ($eventId != null) {
 											<div class="form-group">
 												<label for='country' class="col-sm-2 control-label">Country </label>
 												<div class="col-sm-7">
-													<select class="form-control" name='country' id='country' required><?php echo genCountriesSelect() ?></select>
+													<select class="form-control" name='country' id='country' required><?php echo genCountriesSelect($event->country) ?></select>
 												</div>
 											</div>
 											<div class="form-group">
@@ -105,9 +153,15 @@ if ($eventId != null) {
 												</div>
 											</div>
 											<div class="form-group">
+												<label for='showEvent' class="col-sm-2 control-label">Show event</label>
+												<div class="col-sm-1">
+													<input type="checkbox" class="form-control" name='showEvent' id='showEvent' <?php echo $checkBoxValue ?>>
+												</div>
+											</div>
+											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-12">
-													<button class="btn btn-primary col-sm-4" type="submit" value="Create" name="createBtn">Save</button>
-													<div class="col-sm-1"></div><button class="btn btn-primary col-sm-4" value="Create" name="createBtn">Delete event</button>
+													<button class="btn btn-primary col-sm-4" type="submit" value="Save" name="saveBtn">Save</button>
+													<div class="col-sm-1"></div><button class="btn btn-primary col-sm-4" value="Delete" name="deleteBtn">Delete event</button>
 												</div>
 											</div>
 										</form>

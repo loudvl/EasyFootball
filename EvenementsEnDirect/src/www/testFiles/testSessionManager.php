@@ -1,4 +1,9 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
 require('../managers/SessionManager.php');
 session_start();
 //Adding nickname to session

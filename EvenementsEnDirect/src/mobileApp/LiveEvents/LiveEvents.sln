@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveEvents", "LiveEvents.csproj", "{8D345127-944F-4B89-B035-9DE56BF2828B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D345127-944F-4B89-B035-9DE56BF2828B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D345127-944F-4B89-B035-9DE56BF2828B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D345127-944F-4B89-B035-9DE56BF2828B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8D345127-944F-4B89-B035-9DE56BF2828B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D345127-944F-4B89-B035-9DE56BF2828B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D345127-944F-4B89-B035-9DE56BF2828B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD36B360-F8AF-4759-BAD4-098711A65843}
+	EndGlobalSection
+EndGlobal

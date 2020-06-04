@@ -1,4 +1,9 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
 require_once $_SERVER['DOCUMENT_ROOT'].'/config/mailparam.php';
 // Inclure le fichier swift_required.php localisé dans le répertoire swiftmailer5
 require_once $_SERVER['DOCUMENT_ROOT'].'/swiftmailer5/lib/swift_required.php';

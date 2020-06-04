@@ -1,4 +1,9 @@
 <?php
+/* Owner : Davila Lou IDAP4A
+*  Project : Live Events (TPI 2020)
+*  Version : 1.0
+*  Date : 25/05/2020 - 09/06/2020
+*/
 require_once('../classes/Database.php');
 require_once('../classes/Event.php');
 require_once("../classes/Message.php");
@@ -13,7 +18,7 @@ class EventManager
      */
     public static function getAllVisibleEvents($filter = true)
     {
-        $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries_ISO,Event_States_CODE FROM events WHERE IS_VISIBLE = 1";
+        $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries_ISO,Event_States.LABEL as STATE FROM events JOIN Event_States ON events.Event_States_CODE = Event_States.CODE WHERE IS_VISIBLE = 1";
         switch($filter)
         {
             case false:
@@ -32,7 +37,7 @@ class EventManager
             $size = count($tempResult);
             for($i=0;$i < $size;$i++)
             {
-                $result[$i] = new Event($tempResult[$i]['ID'],$tempResult[$i]['TITLE'],$tempResult[$i]['DESCRIPTION'],$tempResult[$i]['Event_States_CODE'],$tempResult[$i]['Countries_ISO'],$tempResult[$i]['START_DATETIME'],$tempResult[$i]['END_DATETIME']);
+                $result[$i] = new Event($tempResult[$i]['ID'],$tempResult[$i]['TITLE'],$tempResult[$i]['DESCRIPTION'],$tempResult[$i]['STATE'],$tempResult[$i]['Countries_ISO'],$tempResult[$i]['START_DATETIME'],$tempResult[$i]['END_DATETIME']);
             }
         }
         catch(Exception $e)
@@ -202,6 +207,13 @@ class EventManager
         return true;
     }
 
+    /**
+     * This function get an event in the database based on its id and owner nickname
+     *
+     * @param int $eventId
+     * @param string $nickname
+     * @return Event
+     */
     public static function getEvent($eventId,$nickname)
     {
         $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,IS_VISIBLE,Users_NICKNAME,Countries_ISO FROM events WHERE ID = :event AND Users_NICKNAME = :nickname AND Event_States_CODE = 2";
