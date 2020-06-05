@@ -7,11 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.Design.Widget;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
@@ -21,7 +22,7 @@ namespace LiveEvents
     /// <summary>
     /// Own Adapter class based on the BaseAdapter class
     /// </summary>
-    public class MyAdapter : BaseAdapter<Event>
+    public class EventsAdapter : BaseAdapter<Event>
     {
         private readonly IList<Event> _items;
         private readonly Context _context;
@@ -32,7 +33,7 @@ namespace LiveEvents
         /// <param name="context">The context of the app</param>
         /// <param name="items">The list of item to display in the ListView</param>
         /// <param name="filter">Filter to know if we display old events or in progress/not started yet events</param>
-        public MyAdapter(Context context, IList<Event> items,bool filter)
+        public EventsAdapter(Context context, IList<Event> items,bool filter)
         {
             _items = items;
             _context = context;
@@ -63,7 +64,7 @@ namespace LiveEvents
                 var inflater = LayoutInflater.FromContext(_context);
                 view = inflater.Inflate(Resource.Layout.row, parent, false);
             }
-
+            view.Id = item.Id;
             if (!_filter)
             {
                 columnLabelA.Text = "Start";
@@ -82,10 +83,20 @@ namespace LiveEvents
                 view.FindViewById<TextView>(Resource.Id.columnB).Text = item.Title;
                 view.FindViewById<TextView>(Resource.Id.columnC).Text = item.State.ToString();
             }
-
+            view.Click -= View_Click;
+            view.Click += View_Click;
 
             return view;
         }
+
+        private void View_Click(object sender, EventArgs e)
+        {
+            LinearLayout myLayout = (LinearLayout)sender;
+            Intent myIntent = new Intent(_context, typeof(EventDetails));
+            myIntent.PutExtra("eventId", myLayout.Id);
+            _context.StartActivity(myIntent);
+        }
+
         /// <summary>
         /// Count the number of items in our data list
         /// </summary>

@@ -36,7 +36,7 @@ namespace LiveEvents
         /// <param name="isVisible">Is the event visible</param>
         /// <param name="country">The country of the event</param>
         /// <param name="messages">The messages of the event</param>
-        public Event(int id, string title, string description, string startDateTime,string endDateTime,string state,int isVisible,string country,Message[] messages)
+        public Event(int id, string title, string description, string startDateTime, string endDateTime, string state,int isVisible,string country,Message[] messages)
         {
             Id = id;
             Title = title;
@@ -44,6 +44,10 @@ namespace LiveEvents
             State = state;
             Country = country;
             StartDateTime = DateTime.Parse(startDateTime);
+            if (endDateTime != null)
+            {
+                EndDateTime = DateTime.Parse(endDateTime);
+            }
         }
 
     }

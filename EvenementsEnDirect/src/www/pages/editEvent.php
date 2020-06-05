@@ -41,7 +41,7 @@ if($form_off == "Save")
 		EventManager::updateEvent($eventId,$title,$description,$country,$dateTime->format('Y-m-d H:i:s'),$showEvent);
 	}
 }
-	$event = EventManager::getEvent($eventId, SessionManager::getNickname());
+	$event = EventManager::getUserEvent($eventId, SessionManager::getNickname());
 	if ($event != null) {
 		$dateTime = new DateTime(date("Y-m-d H:i:s",strtotime($event->startDateTime)));
 		$startDate = $dateTime->format("Y-m-d");

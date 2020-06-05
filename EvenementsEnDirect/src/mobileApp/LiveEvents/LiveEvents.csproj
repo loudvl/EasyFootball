@@ -62,7 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIConnector.cs" />
-    <Compile Include="MyAdapter.cs" />
+    <Compile Include="EventDetails.cs" />
+    <Compile Include="EventsAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Message.cs" />
@@ -75,9 +76,6 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_main.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -119,6 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\row.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EventDetails.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

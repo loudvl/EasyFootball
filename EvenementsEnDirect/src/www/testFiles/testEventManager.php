@@ -100,14 +100,14 @@ for ($i = 0; $i < count($result); $i++) {
 
 echo "<br>------------------------------------------";
 
-$result = EventManager::getEvent(95, "lou.dvl");
+$result = EventManager::getUserEvent(95, "lou.dvl");
 foreach ($result as $key => $value) {
     echo "<br>" . $key . " : " . $value;
 }
 
 echo "<br>------------------------------------------";
 
-$result = EventManager::getEvent(95, "randomUser");
+$result = EventManager::getUserEvent(95, "randomUser");
 if ($result != null) {
     foreach ($result as $key => $value) {
         echo "<br>" . $key . " : " . $value;

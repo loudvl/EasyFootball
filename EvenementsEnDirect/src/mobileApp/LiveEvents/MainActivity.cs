@@ -19,15 +19,13 @@ namespace LiveEvents
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        RadioGroup eventTypeSelection;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.list_item);
-            eventTypeSelection = FindViewById<RadioGroup>(Resource.Id.radioGroup);
-            eventTypeSelection.CheckedChange += onCheckedChanged;
+            FindViewById<RadioGroup>(Resource.Id.radioGroup).CheckedChange += onCheckedChanged;
 
         }
         /// <summary>
@@ -57,8 +55,8 @@ namespace LiveEvents
             IList<Event> events = JsonConvert.DeserializeObject<List<Event>>(APIConnector.getData(scriptPath));
 
             ListView list = (ListView)FindViewById(Resource.Id.mainList);
-            MyAdapter mSchedule = new MyAdapter(this, events,filter);
-            list.Adapter = mSchedule;
+            EventsAdapter eventsAdapater = new EventsAdapter(this, events,filter);
+            list.Adapter = eventsAdapater;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

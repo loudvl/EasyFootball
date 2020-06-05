@@ -39,7 +39,7 @@ namespace LiveEvents
                 myRequest.ContentType = "application/x-www-form-urlencoded";
                 HttpWebResponse response = (HttpWebResponse)myRequest.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());
-                return DecodeJWT(reader.ReadToEndAsync().Result);
+                return decodeJWT(reader.ReadToEndAsync().Result);
             }
             catch (Exception e)
             {
@@ -51,14 +51,14 @@ namespace LiveEvents
         /// </summary>
         /// <param name="token">The encoded string token in JWT format</param>
         /// <returns>String</returns>
-        private static string DecodeJWT(string token)
+        private static string decodeJWT(string data)
         {
             string result = "";
             var secretKey = "Super";
             byte[] bytesKey = Encoding.ASCII.GetBytes(secretKey);
             try
             {
-                result = JWT.Decode(token, bytesKey);
+                result = JWT.Decode(data, bytesKey);
             }
             catch (Exception e)
             {
