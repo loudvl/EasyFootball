@@ -117,3 +117,34 @@ else
 {
     echo "<br>Can't get event";
 }
+
+echo "<br>------------------------------------------";
+
+if (EventManager::updateEventState(56,'lou.dvl',0)) {
+    echo "<br>Event state updated";
+}
+else
+{
+    echo "<br>Can't update event state";
+}
+
+
+echo "<br>------------------------------------------";
+
+if (EventManager::updateEventVisibility(56,'lou.dvl',false)) {
+    echo "<br>Event visibility updated";
+}
+else
+{
+    echo "<br>Can't update event visibility";
+}
+
+echo "<br>------------------------------------------";
+
+if (EventManager::deleteEvent(56,"lou.dvl")) {
+    echo "<br>Event deleted";
+}
+else
+{
+    echo "<br>Can't delete event";
+}

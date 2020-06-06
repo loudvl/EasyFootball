@@ -8,6 +8,22 @@ require_once("../includes/sessionCheck.php");
 require_once('../includes/displayFunc.php');
 require_once("../managers/EventManager.php");
 require_once("../managers/SessionManager.php");
+
+    $eventId = filter_input(INPUT_GET,'eventId',FILTER_VALIDATE_INT);
+    $eventId = ($eventId == false) ? null : $eventId;
+    if($eventId != null)
+    {
+        $event = EventManager::getEvent($eventId,SessionManager::getNickname());
+        if($event == null)
+        {
+            header("Location: index.php");
+        }
+        
+    }
+    else {
+        header("Location: index.php");
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,12 +80,13 @@ require_once("../managers/SessionManager.php");
                             <div class="row">
                                 <div class="col-md-9">
                                     <div class="panel-heading">
-                                        <div class="panel-title">Manage</div>
+                                        <div class="panel-title">Manage <?php echo $event->title ?></div>
+                                        <div hidden id="eventId"><?php echo $event->id ?></div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="panel-heading">
-                                        <button class="btn btn-primary col-sm-10" value="Start event" name="manageBtn">StartEvent</button>
+                                        <button class="btn btn-primary col-sm-10" value="Start" id="manageBtn" name="manageBtn">Start Event</button>
                                     </div>
                                 </div>
                             </div>
@@ -77,29 +94,34 @@ require_once("../managers/SessionManager.php");
                                 <div class="row">
                                     <div class="col-md-6">
                                         <h5><b>Description :</b></h5>
-                                        <p>Ma description</p>
+                                        <p><?php echo $event->description ?></p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="row">
+                                        <div class="row" id="startDateTimeRow">
                                             <div class="col-md-12">
                                                 <h5><b>Start :</b></h5>
-                                                <p>0000-00-00 00:00:00</p>
+                                                <p><?php echo $event->startDateTime ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <h5><b>Country :</b></h5>
-                                                <p>My country</p>
+                                                <p><?php echo $event->country ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <input class="form-control" type="text" name="messageBox" disabled>
+                                        <input class="form-control" type="text" id="messageBox" name="messageBox">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="btn btn-primary col-sm-10" value="Push" name="pushbtn" disabled>Push message</button>
+                                        <button class="btn btn-primary col-sm-10" type="button" value="Push" id="pushBtn" name="pushBtn">Push message</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" id="msgList">
+
                                     </div>
                                 </div>
                             </div>
@@ -120,6 +142,9 @@ require_once("../managers/SessionManager.php");
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/jqueryUtils.js"></script>
+    <script>
+        displayManageInterface(<?php echo $event->state?>);
+    </script>
 </body>
 
 </html>

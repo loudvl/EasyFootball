@@ -8,6 +8,7 @@ require_once('../classes/Database.php');
 require_once('../classes/Event.php');
 require_once("../classes/Message.php");
 
+
 class EventManager
 {
     /**
@@ -158,7 +159,7 @@ class EventManager
         $sql = "INSERT INTO events(TITLE,DESCRIPTION,START_DATETIME,Users_NICKNAME,Countries_ISO) VALUES (:title,:description,:startDateTime,:nickname,:country)";;
         try
         {
-            $dateTime = $startDateTime->format('Y-m-d H:i:s');
+            $dateTime = $startDateTime;
             $query = Database::getInstance()->prepare($sql);
             $query->bindParam(':title',$title, PDO::PARAM_STR,70);
             $query->bindParam(':description',$description, PDO::PARAM_STR,300);
@@ -237,7 +238,13 @@ class EventManager
         return $result;
     }
 
-    public static function getEvent($eventId)
+    /**
+     * Get a specific visible event by his id
+     *
+     * @param int $eventId
+     * @return Event
+     */
+    public static function getVisibleEvent($eventId)
     {
         $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries.LABEL as COUNTRY,Event_States.LABEL as STATE FROM events JOIN Event_States ON events.Event_States_CODE = Event_States.CODE JOIN Countries ON events.Countries_ISO = Countries.ISO WHERE IS_VISIBLE = 1 AND ID = :event";
         $result = null;
@@ -257,6 +264,117 @@ class EventManager
             return FALSE;
         }
         return $result;
+    }
+/**
+ * Get a specific event by his id
+ *
+ * @param int $eventId
+ * @param string $nickname
+ * @return Event
+ */
+    public static function getEvent($eventId,$nickname)
+    {
+        $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries.LABEL as COUNTRY,IS_VISIBLE,Event_States_CODE as STATE FROM events JOIN Countries ON events.Countries_ISO = Countries.ISO WHERE ID = :event AND Users_NICKNAME = :nickname";
+        $result = null;
+        try
+        {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':event',$eventId, PDO::PARAM_INT);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+            $query->execute();
+            $tempResult = $query->fetch(PDO::FETCH_ASSOC);
+            if($tempResult['ID'] != null)
+            {
+                $result = new Event($tempResult['ID'],$tempResult['TITLE'],$tempResult['DESCRIPTION'],$tempResult['STATE'],$tempResult['COUNTRY'],$tempResult['START_DATETIME'],$tempResult['END_DATETIME'],$tempResult['IS_VISIBLE']);
+            }
+        }
+        catch(Exception $e)
+        {
+            return FALSE;
+        }
+        return $result;
+    }
+
+    /**
+     * Update the state of and event in the database
+     *
+     * @param int $eventId
+     * @param string $nickname
+     * @param int $state
+     * @return boolean
+     */
+    public static function updateEventState($eventId,$nickname,$state)
+    {
+        $sqlChangeEndDateTime = "";
+        if($state == 0)
+        {
+            $sqlChangeEndDateTime = ", END_DATETIME = '".date("Y-m-d H:i:s",time())."'";
+        }
+        $sql = "UPDATE events SET Event_States_CODE = :state".$sqlChangeEndDateTime." WHERE ID = :id AND Users_NICKNAME = :nickname";
+        try
+        {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+            $query->bindParam(':state',$state, PDO::PARAM_INT,1);
+            $query->bindParam(':id',$eventId, PDO::PARAM_INT);
+            $query->execute();
+        }
+        catch(Exception $e)
+        {
+            return FALSE;
+        }
+        return true;
+    }
+
+    /**
+     * update an event visibility state
+     *
+     * @param int $eventId
+     * @param string $nickname
+     * @param boolean $isVisible
+     * @return boolean
+     */
+    public static function updateEventVisibility($eventId,$nickname,$isVisible)
+    {
+        $sql = "UPDATE events SET IS_VISIBLE = :isVisible WHERE ID = :id AND Users_NICKNAME = :nickname AND Event_States_CODE != 1";
+        $isVisible = ($isVisible == true) ? 1 : 0;
+        try
+        {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+            $query->bindParam(':isVisible',$isVisible, PDO::PARAM_INT,1);
+            $query->bindParam(':id',$eventId, PDO::PARAM_INT);
+            $query->execute();
+        }
+        catch(Exception $e)
+        {
+            return FALSE;
+        }
+        return true;
+    }
+
+    /**
+     * Delete an event from the database
+     *
+     * @param int $eventId
+     * @param string $nickname
+     * @return boolean
+     */
+    public static function deleteEvent($eventId,$nickname)
+    {
+        $sql = "DELETE FROM Events WHERE ID = :id AND Users_NICKNAME = :nickname AND Event_States_CODE != 1";
+        try
+        {
+            $query = Database::getInstance()->prepare($sql);
+            $query->bindParam(':nickname',$nickname, PDO::PARAM_STR,30);
+            $query->bindParam(':id',$eventId, PDO::PARAM_INT);
+            $query->execute();
+        }
+        catch(Exception $e)
+        {
+            return FALSE;
+        }
+        return true;
     }
 }
 ?>

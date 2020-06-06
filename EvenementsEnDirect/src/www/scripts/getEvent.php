@@ -13,7 +13,7 @@ $eventId = ($eventId == false) ? null : $eventId;
 
 if($eventId != null)
 {
-    echo EncodeJWT(EventManager::getEvent($eventId));
+    echo EncodeJWT(EventManager::getVisibleEvent($eventId));
 }
 
 ?>
