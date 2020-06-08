@@ -1,20 +1,21 @@
-//import * as jwtJsDecode from 'jwt-js-decode';
 /**
  * Display the managing interface of the page in different case
  * @param {int} currentState 
  */
-function displayManageInterface(currentState) {
+function displayManageInterface(currentState, isVisible) {
         switch (currentState) {
                 case 0:
-                        //var event = JWTDecode(getEvent());
-                        //var component = "<div class=\'row\'><div class=\'col-md-12\'><h5><b>End :<\/b><\/h5><p>"+event.endDateTime+"<\/p><\/div><\/div>"
+                        var eventEndDateTime = getEventEndDateTime();
+                        var component = "<div class=\'row\'><div class=\'col-md-12\'><h5><b>End :<\/b><\/h5><p>" + eventEndDateTime + "<\/p><\/div><\/div>"
                         $('#messageBox').remove();
                         $('#pushBtn').remove();
-                        //$(component).insertAfter($("#startDateTimeRow"));
+                        $(component).insertAfter($("#startDateTimeRow"));
+                        displayVisibilityCheckbox(isVisible);
                         break;
                 case 1:
                         $('#messageBox').attr('disabled', false);
                         $('#pushBtn').attr('disabled', false);
+                        displayVisibilityCheckbox(isVisible);
                         break;
                 case 2:
                         $('#messageBox').attr('disabled', true);
@@ -52,6 +53,21 @@ function displayManageButton(currentState) {
         $('#manageBtn').attr('onclick', onClickAction);
         $('#manageBtn').text(text);
 }
+
+function displayVisibilityCheckbox(isChecked) {
+        var checkedString;
+        switch (isChecked) {
+                case 1:
+                        checkedString = "checked";
+                        break;
+                case 0:
+                        checkedString = " ";
+                        break;
+        }
+        var component = "<div class=\'row\'><div class=\'col-md-2\'><h5><b>Show Event :<\/h5><\/div><div class=\'col-md-1\'><input class=\'form-control' type=\'checkbox\' onclick=\'updateEventVisibility()\' id=\'showEventBox\' " + checkedString + "><\/div><\/div>";
+        $("#rightInfosCol").append(component);
+}
+
 /**
  * This is the function called when the start event button is clicked
  */
@@ -81,24 +97,41 @@ function stopEvent() {
         });
 }
 
-function getEvent() {
+function getEventEndDateTime() {
         var id = $('#eventId').text();
+        return $.ajax({
+                type: 'POST',
+                url: '../scripts/getEventEnd.php',
+                async: false,
+                dataType: 'json',
+                data: { eventId: id },
+                done: function (results) {
+                        return results;
+                }
+        }).responseJSON;
+}
+
+function updateEventVisibility() {
+        var id = $('#eventId').text();
+        var isChecked = $("#showEventBox").is(":checked") === false ? 0 : 1;
         $.ajax({
                 type: "POST",
-                url: "../scripts/getEvent.php?eventId="+id,
-                data: { eventId: id, eventState: 0 },
+                url: "../scripts/updateEventVisibility.php",
+                data: { eventId: id, isVisible: isChecked },
                 success: function (data) {
-                        return data;
                 }
         });
 }
 
-function JWTDecode(jwtoken)
-{
-        jwtVerify(jwtoken, 'Super').then(res => {
-                if (res === true) {
-                    const jwt = jwtDecode(jwtoken);
-                    return jwt.payload;
+function sendMessage() {
+        var id = $('#eventId').text();
+        var msg = $('#messageBox').val();
+        $.ajax({
+                type: "POST",
+                url: "../scripts/addMessageToEvent.php",
+                data: { text: msg, eventId: id },
+                success: function (data) {
+                        $('#messageBox').val("");
                 }
-            });
+        });
 }

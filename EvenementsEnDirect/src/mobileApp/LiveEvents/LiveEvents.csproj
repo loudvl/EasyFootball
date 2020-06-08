@@ -67,6 +67,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="MessagesAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,6 +121,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\EventDetails.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MessageTemplate.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

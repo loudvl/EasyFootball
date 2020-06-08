@@ -22,7 +22,7 @@ namespace LiveEvents
         public DateTime StartDateTime { get; }
         public DateTime EndDateTime { get; }
 
-        public List<Message> Messages { get; set; }
+        public IList<Message> Messages { get; set; }
 
         /// <summary>
         /// Constructor
@@ -48,6 +48,7 @@ namespace LiveEvents
             {
                 EndDateTime = DateTime.Parse(endDateTime);
             }
+            Messages = new List<Message>();
         }
 
     }

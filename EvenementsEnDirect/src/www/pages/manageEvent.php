@@ -24,6 +24,7 @@ require_once("../managers/SessionManager.php");
         header("Location: index.php");
     }
 
+    $isVisible = ($event->isVisible != 1) ? false : true;
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,7 +97,7 @@ require_once("../managers/SessionManager.php");
                                         <h5><b>Description :</b></h5>
                                         <p><?php echo $event->description ?></p>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" id="rightInfosCol">
                                         <div class="row" id="startDateTimeRow">
                                             <div class="col-md-12">
                                                 <h5><b>Start :</b></h5>
@@ -116,7 +117,7 @@ require_once("../managers/SessionManager.php");
                                         <input class="form-control" type="text" id="messageBox" name="messageBox">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="btn btn-primary col-sm-10" type="button" value="Push" id="pushBtn" name="pushBtn">Push message</button>
+                                        <button class="btn btn-primary col-sm-10" type="button" id="pushBtn" name="pushBtn" onclick='sendMessage()'>Push message</button>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -143,7 +144,7 @@ require_once("../managers/SessionManager.php");
     <script src="../js/custom.js"></script>
     <script src="../js/jqueryUtils.js"></script>
     <script>
-        displayManageInterface(<?php echo $event->state?>);
+        displayManageInterface(<?php echo $event->state?>,<?php echo $isVisible?>);
     </script>
 </body>
 

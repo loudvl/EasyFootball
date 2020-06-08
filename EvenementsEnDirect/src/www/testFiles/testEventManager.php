@@ -84,7 +84,7 @@ if (EventManager::updateEvent(56, "New test event", "Changed test event", "GB", 
 
 echo "<br>------------------------------------------";
 
-if (EventManager::addMessage("A new message to test the functionnality", 56)) {
+if (EventManager::addMessage("A new message to test the functionnality", 55,"lou.dvl")) {
     echo "<br>New message added";
 } else {
     echo "<br>Can't add a new message";
