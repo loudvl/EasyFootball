@@ -7,13 +7,14 @@ header('Content-Type: application/json');
 */
 require_once("../managers/EventManager.php");
 
-
+//Filter the inputs
 $eventId = filter_input(INPUT_POST,"eventId",FILTER_VALIDATE_INT);
 $eventId = ($eventId == false) ? null : $eventId;
 
 if($eventId != null)
 {
     ob_clean();
+    //Get event end datetime by id encode it and echo result string
     echo json_encode(EventManager::getEventEnd($eventId));
 }
 ?>

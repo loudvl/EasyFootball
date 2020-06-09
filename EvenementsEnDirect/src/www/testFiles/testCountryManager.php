@@ -5,7 +5,7 @@
 *  Date : 25/05/2020 - 09/06/2020
 */
 require('../managers/CountryManager.php');
-//Get all countries labels
+//Get all countries infos
 $countries = CountryManager::getAllCountriesInfos();
 $size = count($countries);
 for($i = 0;$i < $size;$i++)

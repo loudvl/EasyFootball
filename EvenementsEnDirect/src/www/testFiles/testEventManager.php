@@ -100,9 +100,30 @@ for ($i = 0; $i < count($result); $i++) {
 
 echo "<br>------------------------------------------";
 
-$result = EventManager::getUserEvent(95, "lou.dvl");
-foreach ($result as $key => $value) {
-    echo "<br>" . $key . " : " . $value;
+$result = EventManager::getUserEvent(45, "lou.dvl");
+if($result != null)
+{
+    foreach ($result as $key => $value) {
+        echo "<br>" . $key . " : " . $value;
+    }
+}
+else
+{
+    echo "Couldnt load event";
+}
+
+echo "<br>------------------------------------------";
+
+$result = EventManager::getEvent(45, "lou.dvl");
+if($result != null)
+{
+    foreach ($result as $key => $value) {
+        echo "<br>" . $key . " : " . $value;
+    }
+}
+else
+{
+    echo "Couldnt load event";
 }
 
 echo "<br>------------------------------------------";
@@ -148,3 +169,22 @@ else
 {
     echo "<br>Can't delete event";
 }
+
+echo "<br>------------------------------------------";
+
+$result = EventManager::getEventEnd(140);
+if ($result != null) {
+    echo "<br>Event end : ".$result;
+}
+else
+{
+    echo "<br>Can't get event end datetime";
+}
+
+echo "<br>------------------------------------------";
+
+$result = EventManager::getVisibleEvent(140);
+    foreach ($result as $key => $value) {
+        echo "<br>" . $key . " : " . $value;
+    }
+echo "<br>------------------------------------------";

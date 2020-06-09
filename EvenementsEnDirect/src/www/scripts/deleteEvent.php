@@ -7,13 +7,15 @@
 require_once("../managers/EventManager.php");
 require_once("../managers/SessionManager.php");
 session_start();
-
+//Filter the inputs
 $eventId = filter_input(INPUT_GET,"eventId",FILTER_VALIDATE_INT);
 $eventId = ($eventId == false) ? null : $eventId;
 
 if($eventId != null)
 {
-    echo EventManager::deleteEvent($eventId,SessionManager::getNickname());
+    //Delete an event in the database
+    EventManager::deleteEvent($eventId,SessionManager::getNickname());
 }
+//Redirect to dashboard
 header("Location: ../pages/index.php");
 ?>

@@ -7,13 +7,14 @@ header('Content-Type: application/json');
 */
 require_once("EncodeJWT.php");
 require_once("../managers/EventManager.php");
-
+//Filter the inputs
 $eventId = filter_input(INPUT_GET,"eventId",FILTER_VALIDATE_INT);
 $eventId = ($eventId === false) ? null : $eventId;
 
 if($eventId != null)
 {
     ob_clean();
+    //Get event messages by event id, encode them and echo result string
     echo json_encode(EventManager::getMessages($eventId));
 }
 

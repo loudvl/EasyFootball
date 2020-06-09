@@ -6,12 +6,13 @@
 */
 require_once("EncodeJWT.php");
 require_once("../managers/EventManager.php");
-
+//Filter the inputs
 $eventId = filter_input(INPUT_GET,"eventId",FILTER_VALIDATE_INT);
 $eventId = ($eventId == false) ? null : $eventId;
 
 if($eventId != null)
 {
+    //Get event messages by event id, encode them and echo result string
     echo EncodeJWT(EventManager::getMessages($eventId));
 }
 
