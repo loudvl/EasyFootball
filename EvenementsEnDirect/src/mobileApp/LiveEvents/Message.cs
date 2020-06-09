@@ -12,8 +12,17 @@ namespace LiveEvents
     /// </summary>
     public class Message
     {
+        /// <summary>
+        /// The text of the message
+        /// </summary>
         public string Text { get; }
+        /// <summary>
+        /// The posting date and time of the message
+        /// </summary>
         public DateTime PostingDate { get; }
+        /// <summary>
+        /// The id of the event this message belongs too
+        /// </summary>
         public int EventId { get; }
 
         /// <summary>

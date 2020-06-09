@@ -30,7 +30,7 @@ require_once("../managers/SessionManager.php");
 <html>
 
 <head>
-    <title>Create Event</title>
+    <title>Manage Event</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -121,8 +121,10 @@ require_once("../managers/SessionManager.php");
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12" id="msgList">
+                                    <div class="col-md-12">
+                                        <table class="col-md-12" id="msgList" border="1px">
 
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -145,6 +147,7 @@ require_once("../managers/SessionManager.php");
     <script src="../js/jqueryUtils.js"></script>
     <script>
         displayManageInterface(<?php echo $event->state?>,<?php echo $isVisible?>);
+        displayMessages();
     </script>
 </body>
 

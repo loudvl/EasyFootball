@@ -9,41 +9,35 @@ require_once('../includes/displayFunc.php');
 require_once("../managers/EventManager.php");
 require_once("../managers/SessionManager.php");
 
-$form_off = filter_input(INPUT_POST,'createBtn');
-if($form_off == "Create")
-{
-	$title = filter_input(INPUT_POST,'title',FILTER_SANITIZE_STRING);
-    $title = ($title == null) ? "" : $title;
-    $description = filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
-    $description = ($description == null) ? "" : $description;
-    $country = filter_input(INPUT_POST,'country',FILTER_SANITIZE_STRING);
+$form_off = filter_input(INPUT_POST, 'createBtn');
+if ($form_off == "Create") {
+	$title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+	$title = ($title == null) ? "" : $title;
+	$description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+	$description = ($description == null) ? "" : $description;
+	$country = filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING);
 	$country = ($country == null) ? "" : $country;
-	$date = filter_input(INPUT_POST,'date',FILTER_SANITIZE_STRING);
+	$date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
 	$date = ($date == null) ? "" : $date;
-	$time = filter_input(INPUT_POST,'time',FILTER_SANITIZE_STRING);
-    $time = ($time == null) ? "" : $time.":00";
-    if($title != null && $description != null && $country != null && $date != null && $time != null)
-    {
+	$time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_STRING);
+	$time = ($time == null) ? "" : $time . ":00";
+	if ($title != null && $description != null && $country != null && $date != null && $time != null) {
 		$dateTime = null;
-		try
-		{
-			$dateTime = new DateTime(date('Y-m-d H:i:s',strtotime($date." ".$time)));
+		try {
+			$dateTime = new DateTime(date('Y-m-d H:i:s', strtotime($date . " " . $time)));
+		} catch (Exception $e) {
+			exit;
 		}
-		catch(Exception $e)
-		{
-			echo $e;
+		if ($dateTime->format('Y-m-d H:i:m') > date('Y-m-d H:i:m', time())) {
+			if (EventManager::createEvent(SessionManager::getNickname(), $title, $description, $country, $dateTime->format('Y-m-d H:i:s'))) {
+				header('Location: index.php');
+			} else {
+				echo "Couldn't create event";
+			}
+		} else {
+			echo "Cant create event in the past";
 		}
-				if(EventManager::createEvent(SessionManager::getNickname(),$title,$description,$country,$dateTime))
-				{
-					header('Location: index.php');
-					exit;
-				}
-				else
-				{
-					echo "Couldn't create event";
-				}
-	}
-	else{
+	} else {
 		echo "Some fields are empty";
 	}
 }

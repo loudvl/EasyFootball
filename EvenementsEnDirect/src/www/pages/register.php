@@ -25,12 +25,12 @@ if($form_off == "Register")
 		{
 			if(!UserManager::UserExist($nickname))
 			{
-				$token = UserManager::createUser($nickname,$email,$passwd);
+				$token = UserManager::createUser($nickname,$email,hash("sha256",$passwd));
 				if($token != "")
 				{
 					if(EmailManager::sendEmail($email,"Register validation","<html><head></head><body><a href='localhost/pages/validate.php?nickname=".$nickname."&token=".$token."'>Validate</a></body></html>"))
 					{
-						echo "Confirmation email sent";
+						header("Location: index.php");
 					}
 				}
 			}

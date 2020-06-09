@@ -24,8 +24,8 @@ namespace LiveEvents
     /// </summary>
     public class EventsAdapter : BaseAdapter<Event>
     {
-        private readonly IList<Event> _items;
-        private readonly Context _context;
+        private readonly List<Event> _items;
+        private readonly Activity _context;
         private readonly bool _filter;
         /// <summary>
         /// Construct
@@ -33,7 +33,7 @@ namespace LiveEvents
         /// <param name="context">The context of the app</param>
         /// <param name="items">The list of item to display in the ListView</param>
         /// <param name="filter">Filter to know if we display old events or in progress/not started yet events</param>
-        public EventsAdapter(Context context, IList<Event> items,bool filter)
+        public EventsAdapter(Activity context, List<Event> items,bool filter) : base()
         {
             _items = items;
             _context = context;
@@ -53,16 +53,15 @@ namespace LiveEvents
         /// <returns></returns>
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var item = _items[position];
-            var view = convertView;
+            Event item = this[position];
+            View view = convertView;
             TextView columnLabelA = ((Activity)_context).FindViewById<TextView>(Resource.Id.columnLabelA);
             TextView columnLabelB = ((Activity)_context).FindViewById<TextView>(Resource.Id.columnLabelB);
             TextView columnLabelC = ((Activity)_context).FindViewById<TextView>(Resource.Id.columnLabelC);
 
             if (view == null)
             {
-                var inflater = LayoutInflater.FromContext(_context);
-                view = inflater.Inflate(Resource.Layout.row, parent, false);
+                view = _context.LayoutInflater.Inflate(Resource.Layout.row, parent, false);
             }
             view.Id = item.Id;
             if (!_filter)

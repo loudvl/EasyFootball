@@ -24,19 +24,30 @@ namespace LiveEvents
     /// </summary>
     public class MessagesAdapter : BaseAdapter<Message>
     {
-        public IList<Message> _items;
-        public Context _context;
+        /// <summary>
+        /// The items to be displayed in the view
+        /// </summary>
+        public List<Message> _items;
+        /// <summary>
+        /// The app context
+        /// </summary>
+        public Activity _context;
         /// <summary>
         /// Construct
         /// </summary>
         /// <param name="context">The context of the app</param>
         /// <param name="items">The list of item to display in the ListView</param>
-        public MessagesAdapter(Context context, IList<Message> items)
+        public MessagesAdapter(Activity context, List<Message> items) : base()
         {
-            _items = items;
             _context = context;
+            _items = items;
+            Console.WriteLine("MessageAdapter after assignement: _items.Count: {0}", _items.Count);
         }
-
+        /// <summary>
+        /// Give the itemId from its position
+        /// </summary>
+        /// <param name="position">The item position in the view</param>
+        /// <returns>the position of the item in the view</returns>
         public override long GetItemId(int position)
         {
             return position;
@@ -47,16 +58,15 @@ namespace LiveEvents
         /// <param name="position">The position of the data in our data list to use</param>
         /// <param name="convertView">Old view to use again if not null</param>
         /// <param name="parent">The parent view this view is attached to</param>
-        /// <returns></returns>
+        /// <returns>Returns the view that just got generated</returns>
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var item = _items[position];
-            var view = convertView;
-
+            Message item = this[position];
+            View view = convertView;
+            Console.WriteLine("GetView : position: {0} view: {1} parent: {2}", position,view,parent);
             if (view == null)
             {
-                var inflater = LayoutInflater.FromContext(_context);
-                view = inflater.Inflate(Resource.Layout.MessageTemplate, parent, false);
+                view = _context.LayoutInflater.Inflate(Resource.Layout.MessageTemplate, parent, false);
             }
                 view.FindViewById<TextView>(Resource.Id.columnA).Text = item.PostingDate.ToString("yyyy-MM-dd HH:mm:ss");
                 view.FindViewById<TextView>(Resource.Id.columnB).Text = item.Text;
@@ -73,8 +83,8 @@ namespace LiveEvents
         /// <summary>
         /// Return the item of a specific position in the data list
         /// </summary>
-        /// <param name="position"></param>
-        /// <returns></returns>
+        /// <param name="position">the position of the item</param>
+        /// <returns>The Message in the data list specified position</returns>
         public override Message this[int position]
         {
             get { return _items[position]; }

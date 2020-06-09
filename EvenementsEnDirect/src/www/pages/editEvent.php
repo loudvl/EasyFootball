@@ -38,7 +38,13 @@ if($form_off == "Save")
 		{
 
 		}
-		EventManager::updateEvent($eventId,$title,$description,$country,$dateTime->format('Y-m-d H:i:s'),$showEvent);
+		if($dateTime->format('Y-m-d H:i:s') > date('Y-m-d H:i:s',time()))
+		{
+			EventManager::updateEvent($eventId,$title,$description,$country,$dateTime->format('Y-m-d H:i:s'),$showEvent);
+		}
+		else {
+			echo "Cant update event datetime in the past";
+		}
 	}
 }
 	$event = EventManager::getUserEvent($eventId, SessionManager::getNickname());
@@ -161,7 +167,7 @@ else
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-12">
 													<button class="btn btn-primary col-sm-4" type="submit" value="Save" name="saveBtn">Save</button>
-													<div class="col-sm-1"></div><button class="btn btn-primary col-sm-4" value="Delete" name="deleteBtn">Delete event</button>
+													<div class="col-sm-1"></div><button class="btn btn-primary col-sm-4" value="Delete" name="deleteBtn" onclick="window.location.href='../scripts/deleteEvent.php?eventId=<?php echo $event->id;?>'">Delete event</button>
 												</div>
 											</div>
 										</form>

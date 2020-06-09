@@ -11,8 +11,24 @@
  */
 class Country
 {
+    /**
+     * ISO-2 code of a country
+     *
+     * @var string
+     */
     public $iso;
+    /**
+     * Label of a country
+     *
+     * @var string
+     */
     public $label;
+    /**
+     * Construct
+     *
+     * @param string $iso
+     * @param string $label
+     */
     public function __construct($iso,$label)
     {
         $this->iso = $iso;

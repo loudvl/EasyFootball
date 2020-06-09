@@ -53,7 +53,10 @@ function displayManageButton(currentState) {
         $('#manageBtn').attr('onclick', onClickAction);
         $('#manageBtn').text(text);
 }
-
+/**
+ * Generate and display the isVisible checkbox
+ * @param {boolean} isChecked 
+ */
 function displayVisibilityCheckbox(isChecked) {
         var checkedString;
         switch (isChecked) {
@@ -64,12 +67,15 @@ function displayVisibilityCheckbox(isChecked) {
                         checkedString = " ";
                         break;
         }
-        var component = "<div class=\'row\'><div class=\'col-md-2\'><h5><b>Show Event :<\/h5><\/div><div class=\'col-md-1\'><input class=\'form-control' type=\'checkbox\' onclick=\'updateEventVisibility()\' id=\'showEventBox\' " + checkedString + "><\/div><\/div>";
-        $("#rightInfosCol").append(component);
+        var component = "<div class=\'row\' id=\'showEventDiv\'><div class=\'col-md-2\'><h5><b>Show Event :<\/h5><\/div><div class=\'col-md-1\'><input class=\'form-control' type=\'checkbox\' onclick=\'updateEventVisibility()\' id=\'showEventBox\' " + checkedString + "><\/div><\/div>";
+        if($("#showEventDiv").length <= 0)
+        {
+                $("#rightInfosCol").append(component);
+        }
 }
 
 /**
- * This is the function called when the start event button is clicked
+ * This function is called when the start event button is clicked
  */
 function startEvent() {
         var id = $('#eventId').text();
@@ -83,7 +89,7 @@ function startEvent() {
         });
 }
 /**
- * This is the function called when the stop event button is clicked
+ * This function is called when the stop event button is clicked
  */
 function stopEvent() {
         var id = $('#eventId').text();
@@ -96,7 +102,9 @@ function stopEvent() {
                 }
         });
 }
-
+/**
+ * Call the getEventEnd.php script to return the event end date and time
+ */
 function getEventEndDateTime() {
         var id = $('#eventId').text();
         return $.ajax({
@@ -110,7 +118,9 @@ function getEventEndDateTime() {
                 }
         }).responseJSON;
 }
-
+/**
+ * Call the updateEventVisiblity.php script to set the event isVisible state to the checkbox value
+ */
 function updateEventVisibility() {
         var id = $('#eventId').text();
         var isChecked = $("#showEventBox").is(":checked") === false ? 0 : 1;
@@ -122,7 +132,9 @@ function updateEventVisibility() {
                 }
         });
 }
-
+/**
+ * Call the addMessageToEvent.php script to add a message to the database
+ */
 function sendMessage() {
         var id = $('#eventId').text();
         var msg = $('#messageBox').val();
@@ -132,6 +144,36 @@ function sendMessage() {
                 data: { text: msg, eventId: id },
                 success: function (data) {
                         $('#messageBox').val("");
+                        displayMessages();
                 }
         });
+}
+/**
+ * Call the getManagePageMessages.php script to return a javascript object with the messages in it
+ */
+function loadMessages() {
+        var id = $('#eventId').text();
+        return $.ajax({
+                type: 'GET',
+                url: '../scripts/getManagePageMessages.php',
+                async: false,
+                dataType: 'json',
+                data: { eventId: id },
+                done: function (results) {
+                        return JSON.parse(results);
+                }
+        }).responseJSON;
+}
+/**
+ * Display the the current managed event messages
+ */
+function displayMessages()
+{
+        var result = loadMessages();
+        var resultString = "";
+        for(var i = 0;i < result.length;i++)
+        {
+                resultString += "<tr class='displayMsgRow'><td class='messageTd col-sm-2'><b>"+result[i]["postingDate"]+" |</b></td> <td class='messageTd  col-sm-10'><b style='color:blue'>"+result[i]["text"]+"</b></td></tr>";
+        }
+        $("#msgList").html(resultString);
 }

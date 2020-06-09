@@ -10,6 +10,11 @@ require_once("../config/dbConfig.php");
  */
 class Database
 {
+    /**
+     * Unique instance of the db connection
+     *
+     * @var PDO
+     */
     private static $_instance = null;
 
     private function __construct(){}
@@ -36,7 +41,13 @@ class Database
         }
         return self::$_instance;
     }
-
+    /**
+     * Magic function triggered when calling inaccessible static methods with :: operator
+     *
+     * @param string $chrMethod
+     * @param array $arrArguments
+     * @return void
+     */
     final public static function __callStatic( $chrMethod, $arrArguments ) {
         $_instance = self::getInstance();
         return call_user_func_array(array(self::$_instance, $chrMethod), $arrArguments);

@@ -8,9 +8,22 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/config/mailparam.php';
 // Inclure le fichier swift_required.php localisé dans le répertoire swiftmailer5
 require_once $_SERVER['DOCUMENT_ROOT'].'/swiftmailer5/lib/swift_required.php';
 
+/**
+ * This class gives access to emailing functionality
+ */
 class EmailManager
 {
+    /**
+     * The mailer instance
+     *
+     * @var Swift_Mailer
+     */
     private static $mailer = null;
+    /**
+     * The transport instance
+     *
+     * @var Swift_SmtpTransport
+     */
     private static $transport = null;
 
     /**

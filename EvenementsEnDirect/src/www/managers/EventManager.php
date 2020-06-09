@@ -8,7 +8,9 @@ require_once('../classes/Database.php');
 require_once('../classes/Event.php');
 require_once("../classes/Message.php");
 
-
+/**
+ * This class gives access to data manipulation functionnalities for events
+ */
 class EventManager
 {
     /**
@@ -47,18 +49,18 @@ class EventManager
      * Get all events of a specific user from database
      *
      * @param string $nickname
-     * @param integer $filter
+     * @param boolean $filter
      * @return array<Event>
      */
     public static function getUserEvents($nickname, $filter = true)
     {
-        $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries.LABEL as COUNTRY,Event_States.LABEL as STATE,IS_VISIBLE FROM events JOIN Event_States ON events.Event_States_CODE = Event_States.CODE JOIN Countries ON events.Countries_ISO = Countries.ISO WHERE Users_NICKNAME = :nickname";
+        $sql = "SELECT ID,TITLE,DESCRIPTION,START_DATETIME,END_DATETIME,Countries.LABEL as COUNTRY,Event_States.LABEL as STATE,IS_VISIBLE FROM events JOIN Event_States ON events.Event_States_CODE = Event_States.CODE JOIN Countries ON events.Countries_ISO = Countries.ISO WHERE (Users_NICKNAME = :nickname)";
         switch ($filter) {
             case false:
                 $sql .= " AND Event_States_CODE = 0 ORDER BY START_DATETIME DESC";
                 break;
             case true:
-                $sql .= " AND Event_States_CODE = 1 OR Event_States_CODE = 2 ORDER BY Event_States_CODE ASC, START_DATETIME DESC";
+                $sql .= " AND Event_States_CODE != 0 ORDER BY Event_States_CODE ASC, START_DATETIME ASC";
                 break;
         }
         try {
@@ -78,7 +80,7 @@ class EventManager
     }
 
     /**
-     * Gets all the messages of an event from the database
+     * Get all the messages of an event from the database
      *
      * @param int $eventId
      * @return array<Message>
@@ -107,6 +109,7 @@ class EventManager
      *
      * @param string $message
      * @param int $eventId
+     * @param string $nickname
      * @return boolean
      */
     public static function addMessage($message, $eventId, $nickname)
@@ -140,18 +143,17 @@ class EventManager
      * @param string $title
      * @param string $description
      * @param string $country
-     * @param DateTime $startDateTime
+     * @param string $startDateTime
      * @return boolean
      */
     public static function createEvent($nickname, $title, $description, $country, $startDateTime)
     {
         $sql = "INSERT INTO events(TITLE,DESCRIPTION,START_DATETIME,Users_NICKNAME,Countries_ISO) VALUES (:title,:description,:startDateTime,:nickname,:country)";;
         try {
-            $dateTime = $startDateTime;
             $query = Database::getInstance()->prepare($sql);
             $query->bindParam(':title', $title, PDO::PARAM_STR, 70);
             $query->bindParam(':description', $description, PDO::PARAM_STR, 300);
-            $query->bindParam(':startDateTime', $dateTime, PDO::PARAM_STR, 19);
+            $query->bindParam(':startDateTime', $startDateTime, PDO::PARAM_STR, 19);
             $query->bindParam(':nickname', $nickname, PDO::PARAM_STR, 30);
             $query->bindParam(':country', $country, PDO::PARAM_STR, 2);
             $query->execute();
@@ -162,13 +164,13 @@ class EventManager
     }
 
     /**
-     * Update an event information in the database
+     * Update an event informations in the database
      *
      * @param int $eventId
      * @param string $title
      * @param string $description
      * @param string $country
-     * @param DateTime $startDateTime
+     * @param string $startDateTime
      * @param boolean $isVisible
      * @return boolean
      */
@@ -241,7 +243,7 @@ class EventManager
         return $result;
     }
     /**
-     * Get a specific event by his id
+     * Get a specific event by his id and owner nickname
      *
      * @param int $eventId
      * @param string $nickname

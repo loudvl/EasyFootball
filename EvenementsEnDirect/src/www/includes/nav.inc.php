@@ -5,7 +5,7 @@
 *  Date : 25/05/2020 - 09/06/2020
 */
 
-if (strpos($_SERVER["SCRIPT_NAME"], "index.php"))  //cette page est index.php
+if (strpos($_SERVER["SCRIPT_NAME"], "index.php"))  //This page is index.php
 {
     echo '<ul class="nav">
     <li class="current"><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
@@ -13,7 +13,7 @@ if (strpos($_SERVER["SCRIPT_NAME"], "index.php"))  //cette page est index.php
     <li><a href="logout.php"><i class="glyphicon glyphicon-tasks"></i> Disconnect</a></li>
     </ul>';
 }
-elseif (strpos($_SERVER["SCRIPT_NAME"], "createEvent.php"))  //cette page est createEvent.php
+elseif (strpos($_SERVER["SCRIPT_NAME"], "createEvent.php"))  //This page is createEvent.php
 {
     echo '<ul class="nav">
     <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
@@ -21,7 +21,7 @@ elseif (strpos($_SERVER["SCRIPT_NAME"], "createEvent.php"))  //cette page est cr
     <li><a href="logout.php"><i class="glyphicon glyphicon-tasks"></i> Disconnect</a></li>
     </ul>';
 }
-else // sinon
+else // else
 {
     echo '<ul class="nav">
     <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>

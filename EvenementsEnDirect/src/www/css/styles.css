@@ -1,3 +1,18 @@
+#msgList
+{
+   margin-top: 20px;
+}
+.displayMsgRow
+        {
+            font-size: 15px;
+            border:1px solid black;
+        }
+
+        .messageTd
+        {
+            border: none;
+        }
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f7f7f7;

@@ -17,7 +17,7 @@ if($form_off == "login")
     $passwd = ($passwd == null) ? "" : $passwd;
     if($nickname != null && $passwd != null)
     {
-        if(UserManager::Connect($nickname,$passwd) == true)
+        if(UserManager::Connect($nickname,hash("sha256",$passwd)) == true)
         {
             SessionManager::addNickname($nickname);
             echo "Login successful : ".$nickname;

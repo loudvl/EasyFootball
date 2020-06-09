@@ -5,6 +5,10 @@
 *  Date : 25/05/2020 - 09/06/2020
 */
 require("../classes/Database.php");
+
+/**
+ * The UserManager give access to functions that are working with user informations
+ */
 class UserManager
 {
     /**
@@ -16,8 +20,7 @@ class UserManager
      */
     public static function connect($nickname,$passwd)
     {
-        $passwd = hash("sha256",$passwd);
-        $sql = "SELECT NICKNAME FROM users WHERE NICKNAME = :nickname AND PASSWD = :passwd";
+        $sql = "SELECT NICKNAME FROM users WHERE NICKNAME = :nickname AND PASSWD = :passwd AND STATE = 1";
 
     try
     {
@@ -28,7 +31,6 @@ class UserManager
         if($query->fetch(PDO::FETCH_ASSOC) != null)
         {
             return true;
-            exit();
         }
     }
     catch(Exception $e)
@@ -106,7 +108,7 @@ class UserManager
      */
     public static function validateUser($nickname,$token)
     {
-        $sql = "UPDATE users SET state = 1 WHERE NICKNAME = :nickname AND VALIDATION_TOKEN = :token";
+        $sql = "UPDATE users SET state = 1 WHERE NICKNAME = :nickname AND VALIDATION_TOKEN = :token AND NOW() <= VALIDATION_TOKEN_EXPIRATION";
 
         try
         {

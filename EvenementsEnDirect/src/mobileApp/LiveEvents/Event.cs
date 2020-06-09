@@ -14,15 +14,38 @@ namespace LiveEvents
     /// </summary>
     public class Event
     {
+        /// <summary>
+        /// The id of the event
+        /// </summary>
         public int Id { get; }
+        /// <summary>
+        /// The title of the event
+        /// </summary>
         public string Title { get; }
+        /// <summary>
+        /// The description of the event
+        /// </summary>
         public string Description { get; }
+        /// <summary>
+        /// The state of the event
+        /// </summary>
         public string State { get; }
+        /// <summary>
+        /// The country of the event
+        /// </summary>
         public string Country { get; }
+        /// <summary>
+        /// The start date and time of the event
+        /// </summary>
         public DateTime StartDateTime { get; }
+        /// <summary>
+        /// The end date and time of the event
+        /// </summary>
         public DateTime EndDateTime { get; }
-
-        public IList<Message> Messages { get; set; }
+        /// <summary>
+        /// The messages of the event
+        /// </summary>
+        public List<Message> Messages { get; set; }
 
         /// <summary>
         /// Constructor
